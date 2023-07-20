@@ -1,0 +1,2154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RELATÓRIO DE CRÉDITO SINTÉTICO</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+    <link href="https://areadecliente.infotrust.pt/CSS/Pretty-Footer-Outside.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <style>
+        @import url("chrome-extension://adlpodnneegcnbophopdmhedicjbcgco/content/styles.css");
+    </style>
+    <style>
+        .bg-infotrust {
+            background-color: #006CB0;
+        }
+
+        .bg-secondaryInfotrust {
+            background-color: #95d8f2;
+        }
+
+        .tag {
+            color: green;
+        }
+
+        .value {
+            color: darkblue;
+        }
+    </style>
+</head>
+<body onload="displayFormattedXML(xmlDataArray);">
+    <div class="container">
+        <!-- Image and text -->
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+                <img src="https://infotrust.pt/wp-content/uploads/2017/01/cropped-logotipo.png" class="custom-logo" alt="infotrust logotipo">
+            </a>
+            <a class="navbar-brand ml-auto text-right" href="#">
+                CONFIANÇA E RIGOR
+            </a>
+
+        </nav>
+
+        <div class="card">
+            <div class="card-header bg-white text-dark">
+                <h4>RELATÓRIO DE CRÉDITO SINTÉTICO</h4>
+            </div>
+        </div>
+        <div class="card">
+
+            <!-- CABEÇALHO - HEADER -->
+            <div class="modulo">
+                <div class="card-header bg-infotrust text-white">
+                    CABEÇALHO - HEADER
+                </div>
+                <div class="card-body bg-secondaryInfotrust text-secondary">
+                    <p>
+                        Esta informação é a única que não se encontra dentro de um módulo.<br />
+                        Tem informação sobre o tipo de relatório, sobre a entidade pedida e sobre o cliente que fez o pedido.
+                    </p>
+                </div>
+                <div class="card-header">
+                    <span data-toggle="collapse" data-target="#HEADER">
+                        <i class="fa fa-angle-down">&nbsp;</i>Mostrar o XML
+                    </span>
+                    <div id="HEADER" class="collapse">
+
+                        <div id="xml-container"></div>
+
+
+
+                        <div class="xml-box" data-xml-index="0" data-target-element="xml-box-0" id="xml-box-0"></div>
+                    </div>
+                </div>
+                <div class="card-header">
+                    <span data-toggle="collapse" data-target="#HEADER_card">
+                        <i class="fa fa-angle-down">&nbsp;</i>Mostrar os atributos
+                    </span>
+                    <div id="HEADER_card" class="collapse">
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 30%;">Nome</th>
+                                        <th style="width: 20%;">Tipo de Dados</th>
+                                        <th style="width: 5%;">Obrigatoriedade</th>
+                                        <th style="width: 5%;">Tamanho</th>
+                                        <th style="width: 5%;">Formato</th>
+                                        <th style="width: 40%;">Observações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>TRUST_NUMBER</td>
+                                        <td>Número</td>
+                                        <td>Obrigatório</td>
+                                        <td>Big Int</td>
+                                        <td>Positivo</td>
+                                        <td>Número interno associado à entidado do relatório.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>DATANOW</td>
+                                        <td>Data</td>
+                                        <td>Obrigatório</td>
+                                        <td>10</td>
+                                        <td>dd-mm-yyyy</td>
+                                        <td>Data atual em que o relatório foi gerado.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>LANG</td>
+                                        <td>Texto</td>
+                                        <td>Obrigatório</td>
+                                        <td>2</td>
+                                        <td>-</td>
+                                        <td>Idioma utilizado no relatório (neste caso, PT para Português).</td>
+                                    </tr>
+                                    <tr>
+                                        <td>REPORT_TYPE</td>
+                                        <td>Texto</td>
+                                        <td>Obrigatório</td>
+                                        <td>250</td>
+                                        <td>-</td>
+                                        <td>Tipo de relatório.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CLIENT_NAME</td>
+                                        <td>Texto</td>
+                                        <td>Obrigatório</td>
+                                        <td>120</td>
+                                        <td>-</td>
+                                        <td>Nome do cliente ou empresa solicitante do relatório.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SUBSCRIBER</td>
+                                        <td>Número</td>
+                                        <td>Obrigatório</td>
+                                        <td>Inteiro</td>
+                                        <td>Positivo</td>
+                                        <td>Identificador do assinante do relatório.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>VAT</td>
+                                        <td>Número</td>
+                                        <td>Obrigatório</td>
+                                        <td>9</td>
+                                        <td>Positivo</td>
+                                        <td>Número de identificação fiscal da empresa.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>NAME</td>
+                                        <td>Texto</td>
+                                        <td>Obrigatório</td>
+                                        <td>120</td>
+                                        <td>-</td>
+                                        <td>Nome completo da entidade.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RISCO CRÉDITO - RATING DYNAMIC -->
+            <div class="modulo">
+                <div class="card-header bg-infotrust text-white">
+                    RISCO CRÉDITO - RATING DYNAMIC
+                </div>
+                <div class="card-body bg-secondaryInfotrust text-secondary">
+                    <p>Este módulo tem a informação sobre o risco de crédito e a nossa avaliação do rating da empresa.
+                </div>
+                <div class="card-header">
+                    <span data-toggle="collapse" data-target="#Rating">
+                        <i class="fa fa-angle-down">&nbsp;</i>Mostrar o XML
+                    </span>
+                    <div id="Rating" class="collapse">
+                        <div class="xml-box" data-xml-index="1" data-target-element="xml-box-1" id="xml-box-1"></div>
+
+                    </div>
+                </div>
+                <div class="card-header">
+                    <span data-toggle="collapse" data-target="#RatingDynamiic_card">
+                        <i class="fa fa-angle-down">&nbsp;</i>Mostrar os atributos
+                    </span>
+
+                    <div id="RatingDynamiic_card" class="collapse">
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 30%;">Nome</th>
+                                        <th style="width: 20%;">Tipo de Dados</th>
+                                        <th style="width: 5%;">Obrigatoriedade</th>
+                                        <th style="width: 5%;">Tamanho</th>
+                                        <th style="width: 5%;">Formato</th>
+                                        <th style="width: 40%;">Observações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Credit_Risk_Image</td>
+                                        <td>Texto</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>Imagem do risco de crédito</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Credit_Risk_Description</td>
+                                        <td>Texto</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>Descrição do risco de crédito</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Credit_Recommendation_Image</td>
+                                        <td>Texto</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>Imagem da recomendação de crédito</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Credit_Recommendation_Description</td>
+                                        <td>Texto</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>Descrição da recomendação de crédito</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Incidents_Image</td>
+                                        <td>Texto</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>Imagem dos incidentes</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Incidents_Description</td>
+                                        <td>Texto</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>Total de incidentes</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Actual_Condition_Image</td>
+                                        <td>Texto</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>Imagem da situação atual</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Actual_Condition_Description</td>
+                                        <td>Texto</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>Descrição da situação atual</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- PRINCIPAIS INDICADORES FINANCEIROS - FINANCIAL HIGHLIGHTS -->
+            <div class="modulo">
+                <div class="card-header bg-infotrust text-white">
+                    PRINCIPAIS INDICADORES FINANCEIROS - FINANCIAL HIGHLIGHTS
+                </div>
+                <div class="card-body bg-secondaryInfotrust text-secondary">
+                    <p>
+                        Dados financeiros como vendas líquidas, resultado líquido, capital próprio, inventários, passivo e ativo, fornecendo uma visão abrangente do desempenho e da saúde financeira da entidade.
+                    </p>
+                </div>
+
+
+                <div class="card-header">
+                    <span data-toggle="collapse" data-target="#FinancialHighlight">
+                        <i class="fa fa-angle-down">&nbsp;</i>Mostrar o XML
+                    </span>
+                    <div id="FinancialHighlight" class="collapse">
+                        <div class="card-body bg-light text-black">
+                            <p>
+                                Este módulo possui várias linhas, sendo que cada linha corresponde a um atributo financeiro. Na primeira linha, é indicado o ano correspondente ao valor do atributo. Cada atributo possui três valores: Current_Year_Values (Valores do Ano Atual), Last_Year_Values (Valores do Ano Anterior) e Last_Year_Values_1 (Valores do Ano Anterior - 1).<br />
+                            </p>
+                        </div>
+                        <div class="xml-box" data-xml-index="2" data-target-element="xml-box-2" id="xml-box-2"></div>
+                    </div>
+                </div>
+                <div class="card-header">
+                    <span data-toggle="collapse" data-target="#FinancialHighlights">
+                        <i class="fa fa-angle-down">&nbsp;</i>Mostrar os atributos
+                    </span>
+                    <div id="FinancialHighlights" class="collapse">
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 30%;">Nome</th>
+                                        <th style="width: 20%;">Tipo de Dados</th>
+                                        <th style="width: 5%;">Obrigatoriedade</th>
+                                        <th style="width: 5%;">Tamanho</th>
+                                        <th style="width: 5%;">Formato</th>
+                                        <th style="width: 40%;">Observações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Vendas Líquidas</td>
+                                        <td>Número decimal</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>Valores específicos das vendas líquidas.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Resultado Líquido</td>
+                                        <td>Número decimal</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>Valores específicos do resultado líquido.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Capital Próprio</td>
+                                        <td>Número decimal</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>Valores específicos do capital próprio.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Inventários</td>
+                                        <td>Número decimal</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>Valores específicos dos inventários.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Passivo</td>
+                                        <td>Número decimal</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>Valores específicos do passivo.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ativo</td>
+                                        <td>Número decimal</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>Valores específicos do ativo.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SUMÁRIO - SUMMARY -->
+            <div class="modulo">
+                <div class="card-header bg-infotrust text-white">
+                    SUMÁRIO - SUMMARY
+                </div>
+                <div class="card-body bg-secondaryInfotrust text-secondary">
+                    <p>O resumo fornece informações sobre a empresa, incluindo sua natureza jurídica, situação atual, fundação, número de contribuinte, número de funcionários, capital social, vendas no último ano e se tem importações e/ou exportações.
+                </div>
+                <div class="card-header">
+                    <span data-toggle="collapse" data-target="#Summary">
+                        <i class="fa fa-angle-down">&nbsp;</i>Mostrar o XML
+                    </span>
+                    <div id="Summary" class="collapse">
+                        <div class="xml-box" data-xml-index="3" data-target-element="xml-box-3" id="xml-box-3"></div>
+
+                    </div>
+                </div>
+                <div class="card-header">
+                    <span data-toggle="collapse" data-target="#Summary_card">
+                        <i class="fa fa-angle-down">&nbsp;</i>Mostrar os atributos
+                    </span>
+                    <div id="Summary_card" class="collapse">
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 30%;">Nome</th>
+                                        <th style="width: 20%;">Tipo de Dados</th>
+                                        <th style="width: 5%;">Obrigatoriedade</th>
+                                        <th style="width: 5%;">Tamanho</th>
+                                        <th style="width: 5%;">Formato</th>
+                                        <th style="width: 40%;">Observações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>VAT_Number</td>
+                                        <td>Número</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>Número de identificação fiscal da empresa.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Legal_Form</td>
+                                        <td>Texto</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>Natureza jurídica.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total</td>
+                                        <td>Número</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>Total de empregados.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Capital</td>
+                                        <td>Número</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>Valor do capital social.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Constitution</td>
+                                        <td>Data</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>yyyymmdd</td>
+                                        <td>Data de constituição.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SituacaoAtual</td>
+                                        <td>Texto</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>Situação atual.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Last_Balance_Date</td>
+                                        <td>Número</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>Ano do último balanço entregue.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total_Sales</td>
+                                        <td>Número decimal</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>Total de vendas.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mother_Company</td>
+                                        <td>Texto</td>
+                                        <td>Opcional</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>Nome da empresa mãe (se aplicável).</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Export</td>
+                                        <td>Número</td>
+                                        <td>Opcional</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>Indicador de exportação (1 para sim).</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Import</td>
+                                        <td>Número</td>
+                                        <td>Opcional</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>Indicador de importação (1 para sim).</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INCIDENTES - SUMMARY OF CLAIMS -->
+            <div class="modulo">
+                <div class="card-header bg-infotrust text-white">
+                    INCIDENTES - SUMMARY OF CLAIMS
+                </div>
+                <div class="card-body bg-secondaryInfotrust text-secondary">
+                    <p>
+                        Informações sobre incidentes, tais como inclusão em listas de devedores, processos de insolvência, ações judiciais (na condição de réu), bem como o processo especial de revitalização (PER) e a presença na lista pública de execuções.
+                    </p>
+                </div>
+
+
+                <div class="card-header">
+                    <span data-toggle="collapse" data-target="#INCIDENTES">
+                        <i class="fa fa-angle-down">&nbsp;</i>Mostrar o XML
+                    </span>
+                    <div id="INCIDENTES" class="collapse">
+                        <div class="card-body bg-light text-black">
+                            <p>
+                                Os dados deste módulo estão organizados da seguinte forma: em cada linha (row), estão presentes duas entidades, totalizando 6 entidades no conjunto de dados. Cada linha indica o ID da respectiva entidade. Além disso, cada um dos valores pode ser representado como "sim" ou "não" (1 ou 0).<br />
+                            </p>
+                        </div>
+                        <div class="xml-box" data-xml-index="4" data-target-element="xml-box-4" id="xml-box-4"></div>
+                    </div>
+                </div>
+                <div class="card-header">
+                    <span data-toggle="collapse" data-target="#Summary_Of_Claims">
+                        <i class="fa fa-angle-down">&nbsp;</i>Mostrar os atributos
+                    </span>
+                    <div id="Summary_Of_Claims" class="collapse">
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 30%;">Nome</th>
+                                        <th style="width: 20%;">Tipo de Dados</th>
+                                        <th style="width: 5%;">Obrigatoriedade</th>
+                                        <th style="width: 5%;">Tamanho</th>
+                                        <th style="width: 5%;">Formato</th>
+                                        <th style="width: 40%;">Observações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>ID</td>
+                                        <td>Integer</td>
+                                        <td>Obrigatório</td>
+                                        <td>1</td>
+                                        <td>-</td>
+                                        <td>Indicador da linha</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Entity_1</td>
+                                        <td>Integer</td>
+                                        <td>Obrigatório</td>
+                                        <td>1</td>
+                                        <td>Número impar</td>
+                                        <td>
+                                            1 = SITUAÇÃO TRIBUTÁRIA<br />
+                                            3 = PROCESSOS DE INSOLVÊNCIA<br />
+                                            5 = AÇÕES JUDICIAIS (RÉU)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Value_1</td>
+                                        <td>Integer</td>
+                                        <td>Obrigatório</td>
+                                        <td>1</td>
+                                        <td>-</td>
+                                        <td>Situações das entidades impar: 1 = Sim 0 = Não</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Entity_2</td>
+                                        <td>Integer</td>
+                                        <td>Obrigatório</td>
+                                        <td>1</td>
+                                        <td>Número par</td>
+                                        <td>
+                                            2 = SITUAÇÃO CONTRIBUTIVA<br />
+                                            4 = PER - PROCESSO ESPECIAL REVITALIZAÇÃO<br />
+                                            6 = LISTA PÚBLICA DE EXECUÇÕES
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Value_2</td>
+                                        <td>Integer</td>
+                                        <td>Obrigatório</td>
+                                        <td>1</td>
+                                        <td>-</td>
+                                        <td>Situações das entidades pares: 1 = Sim 0 = Não</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- IDENTIFICAÇÃO - IDENTIFICATION -->
+            <div class="modulo">
+                <div class="card-header bg-infotrust text-white">
+                    IDENTIFICAÇÃO - IDENTIFICATION
+                </div>
+                <div class="card-body bg-secondaryInfotrust text-secondary">
+                    <p>
+                        Identificação da empresa incluindo nome morada telefones etc.<br />
+                    </p>
+                </div>
+
+
+                <div class="card-header">
+                    <span data-toggle="collapse" data-target="#IDENTIFICATION">
+                        <i class="fa fa-angle-down">&nbsp;</i>Mostrar o XML
+                    </span>
+                    <div id="IDENTIFICATION" class="collapse">
+                        <div class="card-body bg-light text-black">
+                            <p>
+                                Apenas uma row com os pares atributo e valor <br />
+                            </p>
+                        </div>
+                        <div class="xml-box" data-xml-index="5" data-target-element="xml-box-5" id="xml-box-5"></div>
+                    </div>
+                </div>
+                <div class="card-header">
+                    <span data-toggle="collapse" data-target="#IDENTIFICATIONVAL">
+                        <i class="fa fa-angle-down">&nbsp;</i>Mostrar os atributos
+                    </span>
+                    <div id="IDENTIFICATIONVAL" class="collapse">
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 30%;">Nome</th>
+                                        <th style="width: 20%;">Tipo de Dados</th>
+                                        <th style="width: 5%;">Obrigatoriedade</th>
+                                        <th style="width: 5%;">Tamanho</th>
+                                        <th style="width: 5%;">Formato</th>
+                                        <th style="width: 40%;">Observações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Name</td>
+                                        <td>String</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Trust_Number</td>
+                                        <td>Integer</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>VAT_Number</td>
+                                        <td>Integer</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Address</td>
+                                        <td>String</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Postal_Code_Number</td>
+                                        <td>String</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Postal_Code</td>
+                                        <td>String</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Municipality</td>
+                                        <td>String</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>District</td>
+                                        <td>String</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Telephone1</td>
+                                        <td>Integer</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Telephone2</td>
+                                        <td>Integer</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Telephone3</td>
+                                        <td>Integer</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fax1</td>
+                                        <td>Integer</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fax2</td>
+                                        <td>Integer</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fax3</td>
+                                        <td>Integer</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cae1</td>
+                                        <td>String</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cae2</td>
+                                        <td>String</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cae3</td>
+                                        <td>String</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Email</td>
+                                        <td>String</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Website</td>
+                                        <td>String</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Country</td>
+                                        <td>String</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Denomination</td>
+                                        <td>String</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- GRÁFICO SECTORIAL - SECTOR CHART -->
+            <div class="modulo">
+                <div class="card-header bg-infotrust text-white">
+                    GRÁFICO SECTORIAL - SECTOR CHART
+                </div>
+                <div class="card-body bg-secondaryInfotrust text-secondary">
+                    <p>
+                        Este gráfico representa a distribuição das classificações do rating no mesmo setor da empresa.
+                    </p>
+                </div>
+                <div class="card-header">
+                    <span data-toggle="collapse" data-target="#SectorChart">
+                        <i class="fa fa-angle-down">&nbsp;</i>Mostrar o XML
+                    </span>
+                    <div id="SectorChart" class="collapse">
+                        <div class="card-body bg-light text-black">
+                            <p>
+                                Em cada linha (row), estão presentes o número total de empresas para cada classificação de rating. <br />
+                            </p>
+                        </div>
+                        <div class="xml-box" data-xml-index="6" data-target-element="xml-box-6" id="xml-box-6"></div>
+                    </div>
+                </div>
+                <div class="card-header">
+                    <span data-toggle="collapse" data-target="#Sector_Chart">
+                        <i class="fa fa-angle-down">&nbsp;</i>Mostrar os atributos
+                    </span>
+                    <div id="Sector_Chart" class="collapse">
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 30%;">Nome</th>
+                                        <th style="width: 20%;">Tipo de Dados</th>
+                                        <th style="width: 5%;">Obrigatoriedade</th>
+                                        <th style="width: 5%;">Tamanho</th>
+                                        <th style="width: 5%;">Formato</th>
+                                        <th style="width: 40%;">Observações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Total</td>
+                                        <td>Integer</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>Positivo</td>
+                                        <td>Numero de empresas com este rating</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rating</td>
+                                        <td>String</td>
+                                        <td>Obrigatório</td>
+                                        <td>2</td>
+                                        <td>-</td>
+                                        <td>Letra correspondente ao rating</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- ÓRGÃOS DE GESTÃO - MANAGEMENT BODIES -->
+            <div class="modulo">
+                <div class="card-header bg-infotrust text-white">
+                    ÓRGÃOS DE GESTÃO - MANAGEMENT BODIES
+                </div>
+                <div class="card-body bg-secondaryInfotrust text-secondary">
+                    <p>
+                        Informações sobre os orgãos de gestão.
+                    </p>
+                </div>
+
+
+                <div class="card-header">
+                    <span data-toggle="collapse" data-target="#ManagementBodies">
+                        <i class="fa fa-angle-down">&nbsp;</i>Mostrar o XML
+                    </span>
+                    <div id="ManagementBodies" class="collapse">
+                        <div class="card-body bg-light text-black">
+                            <p>
+                                Cada linha contém informações sobre o orgão de gestão. <br />
+                            </p>
+                        </div>
+                        <div class="xml-box" data-xml-index="7" data-target-element="xml-box-7" id="xml-box-7"></div>
+
+                    </div>
+                </div>
+                <div class="card-header">
+                    <span data-toggle="collapse" data-target="#Management_Bodies">
+                        <i class="fa fa-angle-down">&nbsp;</i>Mostrar os atributos
+                    </span>
+                    <div id="Management_Bodies" class="collapse">
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 30%;">Nome</th>
+                                        <th style="width: 20%;">Tipo de Dados</th>
+                                        <th style="width: 5%;">Obrigatoriedade</th>
+                                        <th style="width: 5%;">Tamanho</th>
+                                        <th style="width: 5%;">Formato</th>
+                                        <th style="width: 40%;">Observações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>NAME</td>
+                                        <td>String</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>THEFUNCTION</td>
+                                        <td>String</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>IdOrgaoSocial</td>
+                                        <td>Integer</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Designacao</td>
+                                        <td>String</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <!-- CAPITAL SOCIAL - SOCIAL CAPITAL -->
+            <div class="modulo">
+                <div class="card-header bg-infotrust text-white">
+                    CAPITAL SOCIAL - SOCIAL CAPITAL
+                </div>
+                <div class="card-body bg-secondaryInfotrust text-secondary">
+                    <p>
+                        Informações sobre o capital social da entidade.
+                    </p>
+                </div>
+
+
+                <div class="card-header">
+                    <span data-toggle="collapse" data-target="#ObtemCapitalSocial_P">
+                        <i class="fa fa-angle-down">&nbsp;</i>Mostrar o XML
+                    </span>
+                    <div id="ObtemCapitalSocial_P" class="collapse">
+                        <div class="card-body bg-light text-black">
+                            <p>
+                                Cada linha contém informações sobre o orgão de gestão. <br />
+                            </p>
+                        </div>
+                        <div class="xml-box" data-xml-index="8" data-target-element="xml-box-8" id="xml-box-8"></div>
+
+                    </div>
+                </div>
+                <div class="card-header">
+                    <span data-toggle="collapse" data-target="#ObtemCapitalSocial">
+                        <i class="fa fa-angle-down">&nbsp;</i>Mostrar os atributos
+                    </span>
+                    <div id="ObtemCapitalSocial" class="collapse">
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 30%;">Nome</th>
+                                        <th style="width: 20%;">Tipo de Dados</th>
+                                        <th style="width: 5%;">Obrigatoriedade</th>
+                                        <th style="width: 5%;">Tamanho</th>
+                                        <th style="width: 5%;">Formato</th>
+                                        <th style="width: 40%;">Observações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Capital</td>
+                                        <td>Integer</td>
+                                <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Claim_Number</td>
+                                        <td>Integer</td>
+                                <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Claim_Value</td>
+                                        <td>String</td>
+                                <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>TipoSociedade</td>
+                                        <td>String</td>
+                                <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <!-- DISTRIBUIÇÃO DE CAPITAL - PARTNERS CAPITAL -->
+            <div class="modulo">
+                <div class="card-header bg-infotrust text-white">
+                    DISTRIBUIÇÃO DE CAPITAL - PARTNERS CAPITAL
+                </div>
+                <div class="card-body bg-secondaryInfotrust text-secondary">
+                    <p>
+                        Informações sobre o nome da participação na distribuição e percentagem do capital.
+                    </p>
+                </div>
+
+
+                <div class="card-header">
+                    <span data-toggle="collapse" data-target="#PartnersCapital">
+                        <i class="fa fa-angle-down">&nbsp;</i>Mostrar o XML
+                    </span>
+                    <div id="PartnersCapital" class="collapse">
+                        <div class="card-body bg-light text-black">
+                            <p>
+                                Cada linha contém informações sobre o nome da participação na distribuição do capital, a percentagem de capital e o tipo de sociedade. <br />
+                            </p>
+                        </div>
+                        <div class="xml-box" data-xml-index="9" data-target-element="xml-box-9" id="xml-box-9"></div>
+
+                    </div>
+                </div>
+                <div class="card-header">
+                    <span data-toggle="collapse" data-target="#Partners_Capital">
+                        <i class="fa fa-angle-down">&nbsp;</i>Mostrar os atributos
+                    </span>
+                    <div id="Partners_Capital" class="collapse">
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 30%;">Nome</th>
+                                        <th style="width: 20%;">Tipo de Dados</th>
+                                        <th style="width: 5%;">Obrigatoriedade</th>
+                                        <th style="width: 5%;">Tamanho</th>
+                                        <th style="width: 5%;">Formato</th>
+                                        <th style="width: 40%;">Observações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Total</td>
+                                        <td>Integer</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rating</td>
+                                        <td>String</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ESTRUTURA LEGAL - LEGAL STRUCTURE -->
+            <div class="modulo">
+                <div class="card-header bg-infotrust text-white">
+                    ESTRUTURA LEGAL - LEGAL STRUCTURE
+                </div>
+                <div class="card-body bg-secondaryInfotrust text-secondary">
+                    <p>
+                        Informações sobre a estrutura legal.
+                    </p>
+                </div>
+
+
+                <div class="card-header">
+                    <span data-toggle="collapse" data-target="#LegalStructure">
+                        <i class="fa fa-angle-down">&nbsp;</i>Mostrar o XML
+                    </span>
+                    <div id="LegalStructure" class="collapse">
+                        <div class="xml-box" data-xml-index="10" data-target-element="xml-box-10" id="xml-box-10"></div>
+                    </div>
+                </div>
+                <div class="card-header">
+                    <span data-toggle="collapse" data-target="#Legal_Structure">
+                        <i class="fa fa-angle-down">&nbsp;</i>Mostrar os atributos
+                    </span>
+                    <div id="Legal_Structure" class="collapse">
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 30%;">Nome</th>
+                                        <th style="width: 20%;">Tipo de Dados</th>
+                                        <th style="width: 5%;">Obrigatoriedade</th>
+                                        <th style="width: 5%;">Tamanho</th>
+                                        <th style="width: 5%;">Formato</th>
+                                        <th style="width: 40%;">Observações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Trust_Number</td>
+                                        <td>Integer</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Business_Registration_Number</td>
+                                        <td>Integer</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>anterior número</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Conservatory_ID</td>
+                                        <td>Integer</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Business_Registration_Date</td>
+                                        <td>Date</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>YYYYMMDD</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Conservatory_Designation</td>
+                                        <td>String</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>Registada na conservatória de</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Section_Designation</td>
+                                        <td>String</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Diario_Republica</td>
+                                        <td>String</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Diario_Republica_Date</td>
+                                        <td>Date</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>YYYYMMDD</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Constitution</td>
+                                        <td>Date</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>YYYYMMDD</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Subscription_Number</td>
+                                        <td>Integer</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>com a matrícula</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Registration_Number</td>
+                                        <td>Integer</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Publication_Description</td>
+                                        <td>String</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ALTERAÇÕES AO PACTO SOCIAL - SOCIAL PACT -->
+            <div class="modulo">
+                <div class="card-header bg-infotrust text-white">
+                    ALTERAÇÕES AO PACTO SOCIAL - SOCIAL PACT
+                </div>
+                <div class="card-body bg-secondaryInfotrust text-secondary">
+                    <p>
+                        Alterações efetuadas ao pacto social da entidade, indicando a data e o tipo de alteração realizada.
+                    </p>
+                </div>
+
+
+                <div class="card-header">
+                    <span data-toggle="collapse" data-target="#Social_Pact">
+                        <i class="fa fa-angle-down">&nbsp;</i>Mostrar o XML
+                    </span>
+                    <div id="Social_Pact" class="collapse">
+                        <div class="xml-box" data-xml-index="11" data-target-element="xml-box-11" id="xml-box-11"></div>
+                    </div>
+                </div>
+                <div class="card-header">
+                    <span data-toggle="collapse" data-target="#SocialPact">
+                        <i class="fa fa-angle-down">&nbsp;</i>Mostrar os atributos
+                    </span>
+                    <div id="SocialPact" class="collapse">
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 30%;">Nome</th>
+                                        <th style="width: 20%;">Tipo de Dados</th>
+                                        <th style="width: 5%;">Obrigatoriedade</th>
+                                        <th style="width: 5%;">Tamanho</th>
+                                        <th style="width: 5%;">Formato</th>
+                                        <th style="width: 40%;">Observações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Alteration_Date</td>
+                                        <td>Date</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>YYYYMMDD</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Date</td>
+                                        <td>Date</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>YYYYMMDD</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Publication</td>
+                                        <td>String</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>PactoSocial</td>
+                                        <td>Integer</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>DescricaoPactoSocial</td>
+                                        <td>String</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- PRESTAÇÕES DE CONTAS - ACCOUNTABILITY -->
+            <div class="modulo">
+                <div class="card-header bg-infotrust text-white">
+                    PRESTAÇÕES DE CONTAS - ACCOUNTABILITY
+                </div>
+                <div class="card-body bg-secondaryInfotrust text-secondary">
+                    <p>
+                        Lista as datas de entrega das prestações de contas anuais da Informação Empresarial Simplificada (IES).
+                    </p>
+                </div>
+
+
+                <div class="card-header">
+                    <span data-toggle="collapse" data-target="#Accountability">
+                        <i class="fa fa-angle-down">&nbsp;</i>Mostrar o XML
+                    </span>
+                    <div id="Accountability" class="collapse">
+                        <div class="xml-box" data-xml-index="12" data-target-element="xml-box-12" id="xml-box-12"></div>
+                    </div>
+                </div>
+                <div class="card-header">
+                    <span data-toggle="collapse" data-target="#AccountabilityBody">
+                        <i class="fa fa-angle-down">&nbsp;</i>Mostrar os atributos
+                    </span>
+                    <div id="AccountabilityBody" class="collapse">
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 30%;">Nome</th>
+                                        <th style="width: 20%;">Tipo de Dados</th>
+                                        <th style="width: 5%;">Obrigatoriedade</th>
+                                        <th style="width: 5%;">Tamanho</th>
+                                        <th style="width: 5%;">Formato</th>
+                                        <th style="width: 40%;">Observações</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td>Alteration_Date</td>
+                                        <td>Date</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>YYYYMMDD</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Publication</td>
+                                        <td>String</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Id_Social_Pact</td>
+                                        <td>String</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Description_Social_Pact</td>
+                                        <td>String</td>
+                                        <td>Obrigatório</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <footer>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 footer-navigation">
+                    <a href="https://infotrust.pt">
+                        <img src="https://areadecliente.infotrust.pt/images/infotrust/Infotrust_white.png" style="width: 60%">
+                    </a>
+                    <p>
+                        Ao usar os produtos, o software, os serviços ou o site do <strong>Infotrust</strong>,
+                        você concorda com os <a href="https://areadecliente.infotrust.pt/Termos_e_Condicoes_Infotrust.pdf" target="_blank" style="color: white; text-decoration: underline;">Termos e Condições</a>.
+
+                    </p>
+
+                    <!--
+                     <p class="user-name">
+                        <br /><br /><br />
+                         <a id="_ctl0_ContentPlaceHolderFooter_footer1_LinkButton1" class="btn btn-link" href="javascript:__doPostBack(&#39;_ctl0$ContentPlaceHolderFooter$footer1$LinkButton1&#39;,&#39;&#39;)"><span class='glyphicon glyphicon-off'></span></a>
+                        Label
+
+
+                    </p>
+                    -->
+                </div>
+                <div class="col-md-4 col-sm-6 footer-contacts">
+                    <div>
+                        <span class="fa fa-map-marker footer-contacts-icon"></span>
+                        <p><span class="new-line-span">Alameda de Queijas n.º 64</span> 2790-402 Queijas • Portugal</p>
+                    </div>
+                    <div>
+                        <i class="fa fa-phone footer-contacts-icon"></i>
+                        <p class="footer-center-info email text-left">(+351) 214 249 000</p>
+                    </div>
+                    <div>
+                        <i class="fa fa-envelope footer-contacts-icon"></i>
+                        <p><a href="mailto:clientes@infotrust.pt" target="_blank">clientes@infotrust.pt</a></p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 footer-about">
+                    <h4><strong>INFOTRUST</strong> <small>CONFIANÇA E RIGOR</small></h4>
+                    <p>A <strong>Infotrust</strong> é a maior empresa 100% portuguesa fornecedora de soluções de informação para negócios. </p>
+                    <p class="company-name">Infotrust © 2023 </p>
+
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+        const xmlDataArray = [`
+                    <REPORT>
+                    <TRUST_NUMBER>276182</TRUST_NUMBER>
+                        <DATANOW>20-07-2023</DATANOW>
+                        <LANG>PT</LANG>
+                        <CURRENT_YEAR>2022</CURRENT_YEAR>
+                        <REPORT_TYPE>RELATÓRIO DE CRÉDITO SINTÉTICO</REPORT_TYPE>
+                        <CLIENT_NAME>CLIENTE EXEMPLO LDA</CLIENT_NAME>
+                        <SUBSCRIBER>337</SUBSCRIBER>
+                        <VAT>502640421</VAT>
+                        <NAME>MBA-MARKETING E BRINDES LDA</NAME>
+                    </REPORT>
+`, `<MODULO>
+                            <NAME>Rating_Dynamiic</NAME>
+                            <VALUES>
+                                <ROW>
+                                    <Credit_Risk_Image>icon_gold_slash.png</Credit_Risk_Image>
+                                    <Credit_Risk_Description>Risco de Crédito Considerável</Credit_Risk_Description>
+                                    <Credit_Recommendation_Image>icon_gold_slash.png</Credit_Recommendation_Image>
+                                    <Credit_Recommendation_Description>Prudência</Credit_Recommendation_Description>
+                                    <Incidents_Image>icon_red_cross.png</Incidents_Image>
+                                    <Incidents_Description>1</Incidents_Description>
+                                    <Actual_Condition_Image>icon_verde_certo.png</Actual_Condition_Image>
+                                    <Actual_Condition_Description>Em actividade</Actual_Condition_Description>
+                                </ROW>
+                            </VALUES>
+                        </MODULO>
+`, `<MODULO>
+                            <NAME>Financial_Highlights</NAME>
+                            <VALUES>
+                                <ROW>
+                                    <IdLabel/>
+                                    <Current_Year_Values>2022</Current_Year_Values>
+                                    <Last_Year_Values>2021</Last_Year_Values>
+                                    <Last_Year_Values_1>2020</Last_Year_Values_1>
+                                </ROW>
+                                <ROW>
+                                    <IdLabel>Vendas Liquidas</IdLabel>
+                                    <Current_Year_Values>5892589.46</Current_Year_Values>
+                                    <Last_Year_Values>4469839.65</Last_Year_Values>
+                                    <Last_Year_Values_1>4740984.30</Last_Year_Values_1>
+                                </ROW>
+                                <ROW>
+                                    <IdLabel>Resultado Liquido</IdLabel>
+                                    <Current_Year_Values>112649.73</Current_Year_Values>
+                                    <Last_Year_Values>-219123.46</Last_Year_Values>
+                                    <Last_Year_Values_1>66204.15</Last_Year_Values_1>
+                                </ROW>
+                                <ROW>
+                                    <IdLabel>Capital Próprio</IdLabel>
+                                    <Current_Year_Values>1453321.23</Current_Year_Values>
+                                    <Last_Year_Values>1340671.50</Last_Year_Values>
+                                    <Last_Year_Values_1>1559794.96</Last_Year_Values_1>
+                                </ROW>
+                                <ROW>
+                                    <IdLabel>Inventários</IdLabel>
+                                    <Current_Year_Values>481351.59</Current_Year_Values>
+                                    <Last_Year_Values>371933.36</Last_Year_Values>
+                                    <Last_Year_Values_1>509060.70</Last_Year_Values_1>
+                                </ROW>
+                                <ROW>
+                                    <IdLabel>Passivo</IdLabel>
+                                    <Current_Year_Values>3527818.66</Current_Year_Values>
+                                    <Last_Year_Values>3306256.37</Last_Year_Values>
+                                    <Last_Year_Values_1>2721751.16</Last_Year_Values_1>
+                                </ROW>
+                                <ROW>
+                                    <IdLabel>Activo</IdLabel>
+                                    <Current_Year_Values>4981139.89</Current_Year_Values>
+                                    <Last_Year_Values>4646927.87</Last_Year_Values>
+                                    <Last_Year_Values_1>4281546.12</Last_Year_Values_1>
+                                </ROW>
+                                <ROW>
+                                    <IdLabel>EBITDA</IdLabel>
+                                    <Current_Year_Values>421396.33</Current_Year_Values>
+                                    <Last_Year_Values>90032.19</Last_Year_Values>
+                                    <Last_Year_Values_1>366433.23</Last_Year_Values_1>
+                                </ROW>
+                                <ROW>
+                                    <IdLabel>Empregados</IdLabel>
+                                    <Current_Year_Values>78</Current_Year_Values>
+                                    <Last_Year_Values>81</Last_Year_Values>
+                                    <Last_Year_Values_1>89</Last_Year_Values_1>
+                                </ROW>
+                            </VALUES>
+                        </MODULO>
+`, `<MODULO>
+                            <NAME>Summary</NAME>
+                            <VALUES>
+                                <ROW>
+                                    <VAT_Number>502640421</VAT_Number>
+                                    <Legal_Form>Sociedade por Quotas de Responsabilidade Limitada</Legal_Form>
+                                    <Total>78</Total>
+                                    <Capital>500000</Capital>
+                                    <Constitution>19911016</Constitution>
+                                    <SituacaoAtual>Em actividade</SituacaoAtual>
+                                    <Last_Balance_Date>2022</Last_Balance_Date>
+                                    <Total_Sales>5892589.46</Total_Sales>
+                                    <Mother_Company/>
+                                    <Export>1</Export>
+                                    <Import>1</Import>
+                                </ROW>
+                            </VALUES>
+                        </MODULO>
+`, `<MODULO>
+                            <NAME>Summary_Of_Claims</NAME>
+                            <VALUES>
+                                <ROW>
+                                    <ID>1</ID>
+                                    <Entity_1>1</Entity_1>
+                                    <Value_1>0</Value_1>
+                                    <Entity_2>2</Entity_2>
+                                    <Value_2>0</Value_2>
+                                </ROW>
+                                <ROW>
+                                    <ID>2</ID>
+                                    <Entity_1>3</Entity_1>
+                                    <Value_1>0</Value_1>
+                                    <Entity_2>4</Entity_2>
+                                    <Value_2>0</Value_2>
+                                </ROW>
+                                <ROW>
+                                    <ID>3</ID>
+                                    <Entity_1>5</Entity_1>
+                                    <Value_1>1</Value_1>
+                                    <Entity_2>6</Entity_2>
+                                    <Value_2>0</Value_2>
+                                </ROW>
+                            </VALUES>
+                        </MODULO>
+`, `<MODULO>
+                            <NAME>Identification</NAME>
+                            <VALUES>
+                                <ROW>
+                                    <Name>MBA-MARKETING E BRINDES LDA</Name>
+                                    <Trust_Number>276182</Trust_Number>
+                                    <VAT_Number>502640421</VAT_Number>
+                                    <Address>Rua Vilar do Senhor, nº 493</Address>
+                                    <Postal_Code_Number>4455-213</Postal_Code_Number>
+                                    <Postal_Code>LAVRA</Postal_Code>
+                                    <Municipality>MATOSINHOS</Municipality>
+                                    <District>PORTO</District>
+                                    <Telephone1>229982500</Telephone1>
+                                    <Telephone2>214125678</Telephone2>
+                                    <Telephone3/>
+                                    <Fax1>229982539</Fax1>
+                                    <Fax2>214125650</Fax2>
+                                    <Fax3/>
+                                    <Cae1>46900-Comércio por grosso não especializado</Cae1>
+                                    <Cae2>73110-Agências de publicidade</Cae2>
+                                    <Cae3>47784-Comércio a retalho de outros produtos novos, em estabelecimentos especializados, n.e.</Cae3>
+                                    <Email>NUNO.BRANQUINHO@NOBRINDE.COM</Email>
+                                    <Website>www.nobrinde.com</Website>
+                                    <Country>PORTUGAL</Country>
+                                    <Denomination>Nobrinde</Denomination>
+                                </ROW>
+                            </VALUES>
+                        </MODULO>
+`, `<MODULO>
+                            <NAME>Sector_Chart</NAME>
+                            <VALUES>
+                                <ROW>
+                                    <Total>58</Total>
+                                    <Rating>A</Rating>
+                                </ROW>
+                                <ROW>
+                                    <Total>53</Total>
+                                    <Rating>B</Rating>
+                                </ROW>
+                                <ROW>
+                                    <Total>210</Total>
+                                    <Rating>C</Rating>
+                                </ROW>
+                                <ROW>
+                                    <Total>259</Total>
+                                    <Rating>D</Rating>
+                                </ROW>
+                                <ROW>
+                                    <Total>4081</Total>
+                                    <Rating>E</Rating>
+                                </ROW>
+                                <ROW>
+                                    <Total>4691</Total>
+                                    <Rating>F</Rating>
+                                </ROW>
+                                <ROW>
+                                    <Total>5211</Total>
+                                    <Rating>G</Rating>
+                                </ROW>
+                                <ROW>
+                                    <Total>8075</Total>
+                                    <Rating>H</Rating>
+                                </ROW>
+                                <ROW>
+                                    <Total>11735</Total>
+                                    <Rating>I</Rating>
+                                </ROW>
+                                <ROW>
+                                    <Total>7635</Total>
+                                    <Rating>J</Rating>
+                                </ROW>
+                                <ROW>
+                                    <Total>7752</Total>
+                                    <Rating>L</Rating>
+                                </ROW>
+                                <ROW>
+                                    <Total>5681</Total>
+                                    <Rating>M</Rating>
+                                </ROW>
+                                <ROW>
+                                    <Total>21642</Total>
+                                    <Rating>P</Rating>
+                                </ROW>
+                            </VALUES>
+                        </MODULO>
+`, `<MODULO>
+                            <NAME>Management_Bodies</NAME>
+                            <VALUES>
+                                <ROW>
+                                    <NAME>OLIVEIRA.,NUNO MIGUEL GONCALVES DE</NAME>
+                                    <THEFUNCTION>Sócio Gerente</THEFUNCTION>
+                                    <IdOrgaoSocial>0</IdOrgaoSocial>
+                                    <Designacao/>
+                                </ROW>
+                                <ROW>
+                                    <NAME>OLIVEIRA.,MARISA SABINO PINHO DA FONTE</NAME>
+                                    <THEFUNCTION>Sócio Gerente</THEFUNCTION>
+                                    <IdOrgaoSocial>0</IdOrgaoSocial>
+                                    <Designacao/>
+                                </ROW>
+                            </VALUES>
+                        </MODULO>
+`, `<MODULO>
+                            <NAME>ObtemCapitalSocial_P</NAME>
+                            <VALUES>
+                                <ROW>
+                                    <Capital>500000</Capital>
+                                    <Claim_Number>0</Claim_Number>
+                                    <Claim_Value/>
+                                    <TipoSociedade/>
+                                </ROW>
+                            </VALUES>
+                        </MODULO>
+`, `<MODULO>
+                            <NAME>Partners_Capital</NAME>
+                            <VALUES>
+                                <ROW>
+                                    <NAME>OLIVEIRA.,MARISA SABINO PINHO DA FONTE</NAME>
+                                    <Capital_Distribution>250000.00</Capital_Distribution>
+                                    <Capital_Percentage>50</Capital_Percentage>
+                                    <TipoSociedade/>
+                                </ROW>
+                                <ROW>
+                                    <NAME>OLIVEIRA.,NUNO MIGUEL GONCALVES DE</NAME>
+                                    <Capital_Distribution>250000.00</Capital_Distribution>
+                                    <Capital_Percentage>50</Capital_Percentage>
+                                    <TipoSociedade/>
+                                </ROW>
+                            </VALUES>
+                        </MODULO>
+`, `<MODULO>
+                            <NAME>Legal_Structure</NAME>
+                            <VALUES>
+                                <ROW>
+                                    <Trust_Number>276182</Trust_Number>
+                                    <Business_Registration_Number>49377</Business_Registration_Number>
+                                    <Conservatory_ID>36</Conservatory_ID>
+                                    <Business_Registration_Date>19911106</Business_Registration_Date>
+                                    <Conservatory_Designation>Matosinhos</Conservatory_Designation>
+                                    <Section_Designation>3ª. Secção</Section_Designation>
+                                    <Diario_Republica>90 </Diario_Republica>
+                                    <Diario_Republica_Date>19920416</Diario_Republica_Date>
+                                    <Constitution>19911016</Constitution>
+                                    <Subscription_Number>1   </Subscription_Number>
+                                    <Registration_Number>502640421</Registration_Number>
+                                    <Publication_Description>Diário da República</Publication_Description>
+                                </ROW>
+                            </VALUES>
+                        </MODULO>
+`, `<MODULO>
+                            <NAME>Social_Pact</NAME>
+                            <VALUES>
+                                <ROW>
+                                    <Alteration_Date>20230623</Alteration_Date>
+                                    <Date>20230623</Date>
+                                    <Publication>Portal MJ</Publication>
+                                    <PactoSocial>43</PactoSocial>
+                                    <DescricaoPactoSocial>prestação de contas anuais</DescricaoPactoSocial>
+                                </ROW>
+                                <ROW>
+                                    <Alteration_Date>20220623</Alteration_Date>
+                                    <Date>20220623</Date>
+                                    <Publication>Portal MJ</Publication>
+                                    <PactoSocial>43</PactoSocial>
+                                    <DescricaoPactoSocial>prestação de contas anuais</DescricaoPactoSocial>
+                                </ROW>
+                                <ROW>
+                                    <Alteration_Date>20210730</Alteration_Date>
+                                    <Date>20210730</Date>
+                                    <Publication>Portal MJ</Publication>
+                                    <PactoSocial>43</PactoSocial>
+                                    <DescricaoPactoSocial>prestação de contas anuais</DescricaoPactoSocial>
+                                </ROW>
+                                <ROW>
+                                    <Alteration_Date>20200813</Alteration_Date>
+                                    <Date>20200813</Date>
+                                    <Publication>Portal MJ</Publication>
+                                    <PactoSocial>43</PactoSocial>
+                                    <DescricaoPactoSocial>prestação de contas anuais</DescricaoPactoSocial>
+                                </ROW>
+                                <ROW>
+                                    <Alteration_Date>20190708</Alteration_Date>
+                                    <Date>20190708</Date>
+                                    <Publication>Portal MJ</Publication>
+                                    <PactoSocial>43</PactoSocial>
+                                    <DescricaoPactoSocial>prestação de contas anuais</DescricaoPactoSocial>
+                                </ROW>
+                                <ROW>
+                                    <Alteration_Date>20180713</Alteration_Date>
+                                    <Date>20180713</Date>
+                                    <Publication>Portal MJ</Publication>
+                                    <PactoSocial>43</PactoSocial>
+                                    <DescricaoPactoSocial>prestação de contas anuais</DescricaoPactoSocial>
+                                </ROW>
+                                <ROW>
+                                    <Alteration_Date>20170729</Alteration_Date>
+                                    <Date>20170729</Date>
+                                    <Publication>Portal MJ</Publication>
+                                    <PactoSocial>43</PactoSocial>
+                                    <DescricaoPactoSocial>prestação de contas anuais</DescricaoPactoSocial>
+                                </ROW>
+                                <ROW>
+                                    <Alteration_Date>20160728</Alteration_Date>
+                                    <Date>20160728</Date>
+                                    <Publication>Portal MJ</Publication>
+                                    <PactoSocial>43</PactoSocial>
+                                    <DescricaoPactoSocial>prestação de contas anuais</DescricaoPactoSocial>
+                                </ROW>
+                                <ROW>
+                                    <Alteration_Date>20160628</Alteration_Date>
+                                    <Date>20160628</Date>
+                                    <Publication>Portal MJ</Publication>
+                                    <PactoSocial>3</PactoSocial>
+                                    <DescricaoPactoSocial>alteração ao pacto social</DescricaoPactoSocial>
+                                </ROW>
+                                <ROW>
+                                    <Alteration_Date>20160628</Alteration_Date>
+                                    <Date>20160628</Date>
+                                    <Publication>Portal MJ</Publication>
+                                    <PactoSocial>6</PactoSocial>
+                                    <DescricaoPactoSocial>aumento de capital social</DescricaoPactoSocial>
+                                </ROW>
+                            </VALUES>
+                        </MODULO>
+`, `<MODULO>
+                            <NAME>Accountability</NAME>
+                            <VALUES>
+                                <ROW>
+                                    <Alteration_Date>20230623</Alteration_Date>
+                                    <Publication>Portal MJ</Publication>
+                                    <Id_Social_Pact>prestação de contas anuais</Id_Social_Pact>
+                                    <Description_Social_Pact>ANO: 2022</Description_Social_Pact>
+                                </ROW>
+                                <ROW>
+                                    <Alteration_Date>20220623</Alteration_Date>
+                                    <Publication>Portal MJ</Publication>
+                                    <Id_Social_Pact>prestação de contas anuais</Id_Social_Pact>
+                                    <Description_Social_Pact>ANO: 2021</Description_Social_Pact>
+                                </ROW>
+                                <ROW>
+                                    <Alteration_Date>20210730</Alteration_Date>
+                                    <Publication>Portal MJ</Publication>
+                                    <Id_Social_Pact>prestação de contas anuais</Id_Social_Pact>
+                                    <Description_Social_Pact>ANO: 2020</Description_Social_Pact>
+                                </ROW>
+                                <ROW>
+                                    <Alteration_Date>20200813</Alteration_Date>
+                                    <Publication>Portal MJ</Publication>
+                                    <Id_Social_Pact>prestação de contas anuais</Id_Social_Pact>
+                                    <Description_Social_Pact>ANO: 2019</Description_Social_Pact>
+                                </ROW>
+                                <ROW>
+                                    <Alteration_Date>20190708</Alteration_Date>
+                                    <Publication>Portal MJ</Publication>
+                                    <Id_Social_Pact>prestação de contas anuais</Id_Social_Pact>
+                                    <Description_Social_Pact>ANO: 2018</Description_Social_Pact>
+                                </ROW>
+                            </VALUES>
+                        </MODULO>
+`, `<MODULO>
+                            <NAME>Activity_Sector</NAME>
+                            <VALUES>
+                                <ROW>
+                                    <Cae1>Comércio por grosso não especializado</Cae1>
+                                    <Cae1_ID>46900</Cae1_ID>
+                                    <Cae2>Agências de publicidade</Cae2>
+                                    <Cae2_ID>73110</Cae2_ID>
+                                    <Cae3>Comércio a retalho de outros produtos novos, em estabelecimentos especializados, n.e.</Cae3>
+                                    <Cae3_ID>47784</Cae3_ID>
+                                </ROW>
+                            </VALUES>
+                        </MODULO>
+`, `<MODULO>
+                            <NAME>Social_Object</NAME>
+                            <VALUES>
+                                <ROW>
+                                    <Description>Importação, exportação, distribuição e comércio por grosso e a retalho de brindes e artigos publicitários. Serviços de marketing, criação, design e artes gráficas. Serviços de impressão em estamparia, serigrafia, tampografia, digital e laser. Importação, exportação, distribuição e comércio por grosso e a retalho e serviços de aluguer de bicicletas, motociclos, triciclos e quadriciclos, motorizados ou não, e seus acessórios. Importação, exportação, distribuição e comércio por grosso e a retalho de cigarros eletrónicos e seus acessórios. Importação, exportação, distribuição e comércio por grosso e a retalho de máquinas de impressão digital, seus acessórios e consumíveis. Aluguer e gestão de escritórios e espaços comerciais</Description>
+                                </ROW>
+                            </VALUES>
+                        </MODULO>
+`, `<MODULO>
+                            <NAME>Names</NAME>
+                            <VALUES>
+                                <ROW>
+                                    <Description>Nobrinde</Description>
+                                </ROW>
+                            </VALUES>
+                        </MODULO>
+`, `<MODULO>
+                            <NAME>Banks</NAME>
+                            <VALUES>
+                                <ROW>
+                                    <Designation>MILLENNIUM BCP</Designation>
+                                    <Desk>Matosinhos Negócios</Desk>
+                                </ROW>
+                                <ROW>
+                                    <Designation>BANCO SANTANDER TOTTA SA</Designation>
+                                    <Desk>Brito Capelo - Matosinhos</Desk>
+                                </ROW>
+                            </VALUES>
+                        </MODULO>
+`, `<MODULO>
+                            <NAME>Summary_Of_Claims5years</NAME>
+                            <VALUES>
+                                <ROW>
+                                    <Year>2023</Year>
+                                    <Number_of_Claims>1</Number_of_Claims>
+                                    <Claims_Value>10942.32</Claims_Value>
+                                </ROW>
+                            </VALUES>
+                        </MODULO>
+`, `<MODULO>
+                            <NAME>Claims</NAME>
+                            <VALUES>
+                                <ROW>
+                                    <Claim_date>20230616</Claim_date>
+                                    <Amount>10942.32</Amount>
+                                    <Author>Gotas DAparência, Lda</Author >
+                                    <Claim_Type>Acção Esp.Cump.Obrig.DL269/98 (superior Alçada 1ªInstª)</Claim_Type>
+                                    <Judicial_District>Matosinhos - Trib. Jud. Com. do Porto</Judicial_District>
+                                    <Process>49887/23.6YIPRT</Process>
+                                    <Situation/>
+                                    <Juizo/>
+                                </ROW >
+                                <ROW>
+                                    <Claim_date>20180918</Claim_date>
+                                    <Amount>72553.67</Amount>
+                                    <Author>Liliane Cristina Rodrigues Dolores Figueiredo</Author>
+                                    <Claim_Type>Acção de Processo Comum</Claim_Type>
+                                    <Judicial_District>Portimão - Trib. Jud. Com. de Faro</Judicial_District>
+                                    <Process>2324/18.1T8PTM</Process>
+                                    <Situation />
+                                    <Juizo />
+                                </ROW>
+                            </VALUES >
+                        </MODULO >
+                                `, ` < MODULO >
+                            <NAME>Employees</NAME>
+                            <VALUES>
+                                <ROW>
+                                    <Year>2022</Year>
+                                    <Number_of_Men>40</Number_of_Men>
+                                    <Percentage_of_Men>51</Percentage_of_Men>
+                                    <Number_of_Women>38</Number_of_Women>
+                                    <Percentage_of_Women>49</Percentage_of_Women>
+                                    <Number_of_People>78</Number_of_People>
+                                </ROW>
+                                <ROW>
+                                    <Year>2021</Year>
+                                    <Number_of_Men>45</Number_of_Men>
+                                    <Percentage_of_Men>56</Percentage_of_Men>
+                                    <Number_of_Women>36</Number_of_Women>
+                                    <Percentage_of_Women>44</Percentage_of_Women>
+                                    <Number_of_People>81</Number_of_People>
+                                </ROW>
+                                <ROW>
+                                    <Year>2020</Year>
+                                    <Number_of_Men>43</Number_of_Men>
+                                    <Percentage_of_Men>48</Percentage_of_Men>
+                                    <Number_of_Women>46</Number_of_Women>
+                                    <Percentage_of_Women>52</Percentage_of_Women>
+                                    <Number_of_People>89</Number_of_People>
+                                </ROW>
+                                <ROW>
+                                    <Year>2019</Year>
+                                    <Number_of_Men>51</Number_of_Men>
+                                    <Percentage_of_Men>55</Percentage_of_Men>
+                                    <Number_of_Women>42</Number_of_Women>
+                                    <Percentage_of_Women>45</Percentage_of_Women>
+                                    <Number_of_People>93</Number_of_People>
+                                </ROW>
+                                <ROW>
+                                    <Year>2018</Year>
+                                    <Number_of_Men>47</Number_of_Men>
+                                    <Percentage_of_Men>55</Percentage_of_Men>
+                                    <Number_of_Women>38</Number_of_Women>
+                                    <Percentage_of_Women>45</Percentage_of_Women>
+                                    <Number_of_People>85</Number_of_People>
+                                </ROW>
+                            </VALUES>
+                        </MODULO >
+                                `, ` < MODULO >
+                            <NAME>Installations</NAME>
+                            <VALUES>
+                                <ROW>
+                                    <ID>79485</ID>
+                                    <Trust_Number>276182</Trust_Number>
+                                    <Building/>
+                                    <Area/>
+                                    <Rent/>
+                                    <Address>Rua Almeida Garrett, 7-B
+Telf.: 265 231 146
+Fax: 265 528 048</Address>
+                                    <Number_Of_Installations>0</Number_Of_Installations>
+                                    <Description>Teve instalações</Description>
+                                    <Situation>-1</Situation>
+                                    <Locality/>
+                                    <Postal_Code_Number>2900</Postal_Code_Number>
+                                    <Postal_Code>SETUBAL</Postal_Code>
+                                    <Telephone/>
+                                    <Fax/>
+                                    <Observations/>
+                                    <TipoInstalacao>96</TipoInstalacao>
+                                </ROW>
+                                <ROW>
+                                    <ID>2743838</ID>
+                                    <Trust_Number>276182</Trust_Number>
+                                    <Building/>
+                                    <Area/>
+                                    <Rent/>
+                                    <Address>Rua Vilar do Senhor, nº 493</Address>
+                                    <Number_Of_Installations>0</Number_Of_Installations>
+                                    <Description>Tem sede</Description>
+                                    <Situation/>
+                                    <Locality/>
+                                    <Postal_Code_Number>4455-213</Postal_Code_Number>
+                                    <Postal_Code>LAVRA</Postal_Code>
+                                    <Telephone/>
+                                    <Fax/>
+                                    <Observations/>
+                                    <TipoInstalacao>97</TipoInstalacao>
+                                </ROW>
+                                <ROW>
+                                    <ID>79482</ID>
+                                    <Trust_Number>276182</Trust_Number>
+                                    <Building/>
+                                    <Area/>
+                                    <Rent/>
+                                    <Address>Avenida da República, 181, R/C-Loja 112 e 116 </Address>
+                                    <Number_Of_Installations>0</Number_Of_Installations>
+                                    <Description>Teve sede</Description>
+                                    <Situation>-1</Situation>
+                                    <Locality/>
+                                    <Postal_Code_Number>4450</Postal_Code_Number>
+                                    <Postal_Code>MATOSINHOS</Postal_Code>
+                                    <Telephone/>
+                                    <Fax/>
+                                    <Observations/>
+                                    <TipoInstalacao>98</TipoInstalacao>
+                                </ROW>
+                            </VALUES>
+                        </MODULO >
+                                `, ` < MODULO >
+                            <NAME>Footer</NAME>
+                            <VALUES>
+                                <ROW>
+                                    <Description>O Rating DynamIIC analisa os seguintes critérios: antiguidade, incidentes comerciais (acções judiciais, insolvências, processos especiais de revitalização, protestos de letras), experiências de pagamentos, situação actual, informação financeira, dimensão e sector de actividade.</Description>
+                                </ROW>
+                                <ROW>
+                                    <Description>O Rating DynamIIC tem por base a análise de um conjunto de informação disponível na base de dados da INFOTRUST e no relacionamento de um conjunto de factores que são determinantes na avaliação do comportamento em termos de risco de crédito e da probabilidade de incumprimento de uma entidade empresarial no curto prazo. O sistema de avaliação de risco da INFOTRUST não representa em caso algum a opinião da INFOTRUST, expressando única e exclusivamente uma indicação sobre a possibilidade de uma entidade empresarial entrar em incumprimento.</Description>
+                                </ROW>
+                                <ROW>
+                                    <Description>Por se tratar de um indicador que tem por base uma análise estatística e previsional, não reflecte necessariamente a situação real de uma empresa e, como tal, não dispensa a consulta de outras fontes por parte do cliente.</Description>
+                                </ROW>
+                                <ROW>
+                                    <Description>Este Relatório/Módulo foi elaborado com base na informação disponível na base de dados INFOTRUST. As informações ou dados fornecidos pelo INFOTRUST que constam em qualquer dos seus produtos e serviços, não podem em caso algum ter o carácter de uma garantia. São simples indicações, que estão de acordo com os elementos que o INFOTRUST tenha conseguido obter. Por serem recolhidas de várias fontes não controladas pela INFOTRUST, esta não pode garantir que os dados apresentados sejam absolutamente correctos, apesar do máximo cuidado posto na sua recolha. Como tal, a INFOTRUST não poderá ser responsabilizado por quaisquer erros, omissões e eventuais incoerências.</Description>
+                                </ROW>
+                                <ROW>
+                                    <Description>O Cliente não utilizará estas informações senão para finalidades do seu negócio e para uso exclusivamente interno. As informações fornecidas são de carácter absolutamente confidencial, sendo aquele que as divulgar ou que divulgue a fonte que as forneceu, a terceiras pessoas ou entidades, o único responsável perante a Lei pelos prejuízos e consequências da divulgação.</Description>
+                                </ROW>
+                                <ROW>
+                                    <Description>Para qualquer assunto contacte, por favor, o nosso Serviço de Apoio a Clientes:</Description>
+                                </ROW>
+                                <ROW>
+                                    <Description>Telf: +351 214 249 000 </Description>
+                                </ROW>
+                                <ROW>
+                                    <Description>Fax:  +351 214 249 001/3</Description>
+                                </ROW>
+                                <ROW>
+                                    <Description>e.mail: geral@infotrust.pt</Description>
+                                </ROW>
+                                <ROW>
+                                    <Description>https://infotrust.pt/</Description>
+                                </ROW>
+                            </VALUES>
+                        </MODULO >
+`]
+
+        // Function to format XML with indentation and color-coding
+        function formatXML(xml) {
+            const domParser = new DOMParser();
+            const xmlDoc = domParser.parseFromString(xml, "text/xml");
+            let result = '';
+
+            function traverse(node, indentLevel) {
+                const { nodeName, nodeValue, childNodes } = node;
+                const indent = ' '.repeat(indentLevel * 2);
+
+                if (nodeValue && nodeValue.trim() !== '') {
+                    result += `${indent}<span class="value">${nodeValue}</span>\n`;
+                } else if (nodeName !== '#text') {
+                    result += `${indent}<span class="tag">&lt;${nodeName}&gt;</span>\n`;
+                }
+
+                for (const childNode of childNodes) {
+                    traverse(childNode, indentLevel + 1);
+                }
+
+                if (nodeName !== '#text' && childNodes.length > 0) {
+                    result += `${indent}<span class="tag">&lt;/${nodeName}&gt;</span>\n`;
+                }
+            }
+
+            traverse(xmlDoc.firstChild, 0);
+            return result;
+        }
+        let isRun = false;
+        // Function to create and display formatted XML elements
+        function displayFormattedXML(xmlDataArray) {
+            if (isRun) {
+                return;
+            }
+            const xmlContainers = document.querySelectorAll('.xml-box');
+
+            xmlContainers.forEach((xmlContainer) => {
+                const xmlIndex = parseInt(xmlContainer.dataset.xmlIndex);
+                const targetElementId = xmlContainer.dataset.targetElement;
+                const targetElement = document.getElementById(targetElementId);
+
+                if (xmlIndex >= 0 && xmlIndex < xmlDataArray.length && targetElement) {
+                    const xmlData = xmlDataArray[xmlIndex];
+                    const formattedXML = formatXML(xmlData);
+                    const preElement = document.createElement('pre');
+                    preElement.innerHTML = formattedXML;
+                    targetElement.appendChild(preElement);
+                }
+            });
+            isRun = true;
+        }
+
+        // Call the function to display formatted XML in the specified elements
+        displayFormattedXML(xmlDataArray);
+    </script>
+
+</body>
+</html>
