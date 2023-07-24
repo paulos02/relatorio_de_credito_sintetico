@@ -1756,7 +1756,7 @@
                                         <td>Obrigatório</td>
                                         <td>-</td>
                                         <td>-</td>
-                                        <td>-</td>
+                                        <td>Um texto com pelo menos 3 caracteres.</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -1810,7 +1810,7 @@
                                         <td>Description</td>
                                         <td>String</td>
                                         <td>Obrigatório</td>
-                                        <td>-</td>
+                                        <td>120</td>
                                         <td>-</td>
                                         <td>-</td>
                                     </tr>
@@ -1865,15 +1865,15 @@
                                         <td>Designation</td>
                                         <td>String</td>
                                         <td>Obrigatório</td>
-                                        <td>-</td>
+                                        <td>160</td>
                                         <td>-</td>
                                         <td>-</td>
                                     </tr>
                                     <tr>
                                         <td>Desk</td>
                                         <td>String</td>
-                                        <td>Obrigatório</td>
-                                        <td>-</td>
+                                        <td>Não obrigatório</td>
+                                        <td>120</td>
                                         <td>-</td>
                                         <td>-</td>
                                     </tr>
@@ -1930,8 +1930,8 @@
                                         <td>Year</td>
                                         <td>Integer</td>
                                         <td>Obrigatório</td>
-                                        <td>-</td>
-                                        <td>-</td>
+                                        <td>4</td>
+                                        <td>YYYY</td>
                                         <td>-</td>
                                     </tr>
                                     <tr>
@@ -1939,16 +1939,16 @@
                                         <td>Integer</td>
                                         <td>Obrigatório</td>
                                         <td>-</td>
-                                        <td>-</td>
+                                        <td>Positivo</td>
                                         <td>-</td>
                                     </tr>
                                     <tr>
                                         <td>Claims_Value</td>
-                                        <td>Float</td>
+                                        <td>Decimal</td>
                                         <td>Obrigatório</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
+                                        <td>Positivo</td>
+                                        <td>38,2</td>
+                                        <td>Valor em euros</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -2002,17 +2002,17 @@
                                         <td>Claim_date</td>
                                         <td>Date</td>
                                         <td>Obrigatório</td>
-                                        <td>-</td>
+                                        <td>8</td>
                                         <td>YYYYMMDD</td>
                                         <td>-</td>
                                     </tr>
                                     <tr>
                                         <td>Amount</td>
-                                        <td>Float</td>
+                                        <td>Decimal</td>
                                         <td>Obrigatório</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
+                                        <td>Positivo</td>
+                                        <td>38,2</td>
+                                        <td>Valor em euros</td>
                                     </tr>
                                     <tr>
                                         <td>Author</td>
@@ -2028,7 +2028,137 @@
                                         <td>Obrigatório</td>
                                         <td>-</td>
                                         <td>-</td>
-                                        <td>-</td>
+                                        <td>
+                                            <span data-toggle="collapse" data-target="#Claim_Type_opcoes" style="cursor: pointer;">
+                                                <i class="fa fa-angle-down">&nbsp;</i>Mostrar opções
+                                            </span>
+                                            <div id="Claim_Type_opcoes" class="collapse">
+                                                <pre>
+[{
+        "name": "Acção de Processo Sumaríssimo"
+    }, {
+        "name": "Acção de Processo Sumário"
+    }, {
+        "name": "Acção de Processo Ordinário"
+    }, {
+        "name": "Especial"
+    }, {
+        "name": "Penhora"
+    }, {
+        "name": "Falência"
+    }, {
+        "name": "Recuperação de Empresa"
+    }, {
+        "name": "Éditos"
+    }, {
+        "name": "Execução"
+    }, {
+        "name": "Autos de Falência"
+    }, {
+        "name": "Dissolução"
+    }, {
+        "name": "Execução Ordinária"
+    }, {
+        "name": "Execução Sumária"
+    }, {
+        "name": "Despejo"
+    }, {
+        "name": "Acção Esp.Cump.Obrig.DL269\/98 (superior Alçada 1ªInstª)"
+    }, {
+        "name": "Acordo Extraordinário de Credores"
+    }, {
+        "name": "Execução Sumaríssina"
+    }, {
+        "name": "Execução Comum"
+    }, {
+        "name": "Insolvência"
+    }, {
+        "name": "Autos de Insolvência"
+    }, {
+        "name": "Execução Fiscal"
+    }, {
+        "name": "Acção Declarativa - DL 108\/2006"
+    }, {
+        "name": "Acção de Processo Comum"
+    }, {
+        "name": "Insolv.pess.colect.(Req.)"
+    }, {
+        "name": "Insolv.pess.colect.(Apr.)"
+    }, {
+        "name": "Insolv.pess.singul.(Apr.)"
+    }, {
+        "name": "Insolv.pess.singul.(Req.)"
+    }, {
+        "name": "Insolv.(Encerr. Processo)"
+    }, {
+        "name": "Proc.Esp. Revitalização"
+    }, {
+        "name": "Petição Insolvência"
+    }, {
+        "name": "Aprov. Plano Insolv."
+    }, {
+        "name": "Hom. Plano Insolv."
+    }, {
+        "name": "Não Hom.Plano Insolv."
+    }, {
+        "name": "Qualif. Insolvência"
+    }, {
+        "name": "14-Ind.Lim.Ped. Insolv."
+    }, {
+        "name": "15-Indef. Pedido insolv."
+    }, {
+        "name": "Acção Processo Especial"
+    }, {
+        "name": "Ação p\/ Cobrança Dívidas Serv. Saúde\/Outras"
+    }, {
+        "name": "Proc.Esp.Cont. Artº 162ºCPT"
+    }, {
+        "name": "Ação Pauliana"
+    }, {
+        "name": "Ação Pauliana (Ordinária)"
+    }, {
+        "name": "Ação Pauliana (Sumária)"
+    }, {
+        "name": "Ação Alimentos a Menores"
+    }, {
+        "name": "Ação Esp.Cump.Obrig.DL269\/98 "
+    }, {
+        "name": "Ação Esp.Cump.Obrig.DL269\/98-EXECUÇÃO"
+    }, {
+        "name": "BNA - Ação Especial de Despejo"
+    }, {
+        "name": "Despejo (Ordinário)"
+    }, {
+        "name": "Despejo (Sumário)"
+    }, {
+        "name": "Exec Sentença próprios autos "
+    }, {
+        "name": "Execução (custas\/multa\/Coima)"
+    }, {
+        "name": "Execução (Multa\/Coima)"
+    }, {
+        "name": "Execução custas\/multa\/Coima"
+    }, {
+        "name": "Execução Entrega\\Prestação"
+    }, {
+        "name": "Execução Especial de Alimentos "
+    }, {
+        "name": "Execução por Multa\/Coima"
+    }, {
+        "name": "Petição Falência"
+    }, {
+        "name": "Insolv.pess.colect.(Req.)"
+    }, {
+        "name": "Insolv.pess.colect.(Apr.)"
+    }, {
+        "name": "Insolv.pess.singul.(Apr.)"
+    },
+
+
+</pre>
+                                            </div>
+
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Judicial_District</td>
@@ -2049,7 +2179,7 @@
                                     <tr>
                                         <td>Situation</td>
                                         <td>String</td>
-                                        <td>Obrigatório</td>
+                                        <td>Não obrigatório</td>
                                         <td>-</td>
                                         <td>-</td>
                                         <td>-</td>
@@ -2057,7 +2187,7 @@
                                     <tr>
                                         <td>Juizo</td>
                                         <td>String</td>
-                                        <td>Obrigatório</td>
+                                        <td>Não obrigatório</td>
                                         <td>-</td>
                                         <td>-</td>
                                         <td>-</td>
@@ -2227,7 +2357,7 @@
                                     <tr>
                                         <td>Building</td>
                                         <td>String</td>
-                                        <td>Obrigatório</td>
+                                        <td>Não obrigatório</td>
                                         <td>-</td>
                                         <td>-</td>
                                         <td>-</td>
@@ -2235,7 +2365,7 @@
                                     <tr>
                                         <td>Area</td>
                                         <td>String</td>
-                                        <td>Obrigatório</td>
+                                        <td>Não obrigatório</td>
                                         <td>-</td>
                                         <td>-</td>
                                         <td>-</td>
@@ -2243,7 +2373,7 @@
                                     <tr>
                                         <td>Rent</td>
                                         <td>Float</td>
-                                        <td>Obrigatório</td>
+                                        <td>Não obrigatório</td>
                                         <td>-</td>
                                         <td>-</td>
                                         <td>-</td>
@@ -2275,7 +2405,7 @@
                                     <tr>
                                         <td>Situation</td>
                                         <td>String</td>
-                                        <td>Obrigatório</td>
+                                        <td>Não obrigatório</td>
                                         <td>-</td>
                                         <td>-</td>
                                         <td>-</td>
@@ -2283,7 +2413,7 @@
                                     <tr>
                                         <td>Locality</td>
                                         <td>String</td>
-                                        <td>Obrigatório</td>
+                                        <td>Não obrigatório</td>
                                         <td>-</td>
                                         <td>-</td>
                                         <td>-</td>
@@ -2291,7 +2421,7 @@
                                     <tr>
                                         <td>Postal_Code_Number</td>
                                         <td>String</td>
-                                        <td>Obrigatório</td>
+                                        <td>Não obrigatório</td>
                                         <td>-</td>
                                         <td>-</td>
                                         <td>-</td>
@@ -2299,7 +2429,7 @@
                                     <tr>
                                         <td>Postal_Code</td>
                                         <td>String</td>
-                                        <td>Obrigatório</td>
+                                        <td>Não obrigatório</td>
                                         <td>-</td>
                                         <td>-</td>
                                         <td>-</td>
@@ -2307,7 +2437,7 @@
                                     <tr>
                                         <td>Telephone</td>
                                         <td>String</td>
-                                        <td>Obrigatório</td>
+                                        <td>Não obrigatório</td>
                                         <td>-</td>
                                         <td>-</td>
                                         <td>-</td>
@@ -2315,7 +2445,7 @@
                                     <tr>
                                         <td>Fax</td>
                                         <td>String</td>
-                                        <td>Obrigatório</td>
+                                        <td>Não obrigatório</td>
                                         <td>-</td>
                                         <td>-</td>
                                         <td>-</td>
@@ -2323,7 +2453,7 @@
                                     <tr>
                                         <td>Observations</td>
                                         <td>String</td>
-                                        <td>Obrigatório</td>
+                                        <td>Não obrigatório</td>
                                         <td>-</td>
                                         <td>-</td>
                                         <td>-</td>
@@ -2331,7 +2461,7 @@
                                     <tr>
                                         <td>TipoInstalacao</td>
                                         <td>Integer</td>
-                                        <td>Obrigatório</td>
+                                        <td>Não obrigatório</td>
                                         <td>-</td>
                                         <td>-</td>
                                         <td>-</td>
@@ -2393,618 +2523,618 @@
                 </div>
             </div>
         </footer>
-        <div id="my-div" style="font-size: 8px;">A354C17F-477D-4A02-8772-0DF2C3AB1A5A</div>
+        <div id="my-div" style="font-size: 8px;">0EF91C9A-37EB-4081-A6DE-B47D0704E4D4</div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script>
         const xmlDataArray = [`
-                                                            <REPORT>
-                                                            <TRUST_NUMBER>276182</TRUST_NUMBER>
-                                                                <DATANOW>20-07-2023</DATANOW>
-                                                                <LANG>PT</LANG>
-                                                                <CURRENT_YEAR>2022</CURRENT_YEAR>
-                                                                <REPORT_TYPE>RELATÓRIO DE CRÉDITO SINTÉTICO</REPORT_TYPE>
-                                                                <CLIENT_NAME>CLIENTE EXEMPLO LDA</CLIENT_NAME>
-                                                                <SUBSCRIBER>337</SUBSCRIBER>
-                                                                <VAT>502640421</VAT>
-                                                                <NAME>MBA-MARKETING E BRINDES LDA</NAME>
-                                                            </REPORT>
+                                                                <REPORT>
+                                                                <TRUST_NUMBER>276182</TRUST_NUMBER>
+                                                                    <DATANOW>20-07-2023</DATANOW>
+                                                                    <LANG>PT</LANG>
+                                                                    <CURRENT_YEAR>2022</CURRENT_YEAR>
+                                                                    <REPORT_TYPE>RELATÓRIO DE CRÉDITO SINTÉTICO</REPORT_TYPE>
+                                                                    <CLIENT_NAME>CLIENTE EXEMPLO LDA</CLIENT_NAME>
+                                                                    <SUBSCRIBER>337</SUBSCRIBER>
+                                                                    <VAT>502640421</VAT>
+                                                                    <NAME>MBA-MARKETING E BRINDES LDA</NAME>
+                                                                </REPORT>
 `, `<MODULO>
-                                                                    <NAME>Rating_Dynamiic</NAME>
-                                                                    <VALUES>
-                                                                        <ROW>
-                                                                            <Credit_Risk_Image>icon_gold_slash.png</Credit_Risk_Image>
-                                                                            <Credit_Risk_Description>Risco de Crédito Considerável</Credit_Risk_Description>
-                                                                            <Credit_Recommendation_Image>icon_gold_slash.png</Credit_Recommendation_Image>
-                                                                            <Credit_Recommendation_Description>Prudência</Credit_Recommendation_Description>
-                                                                            <Incidents_Image>icon_red_cross.png</Incidents_Image>
-                                                                            <Incidents_Description>1</Incidents_Description>
-                                                                            <Actual_Condition_Image>icon_verde_certo.png</Actual_Condition_Image>
-                                                                            <Actual_Condition_Description>Em actividade</Actual_Condition_Description>
-                                                                        </ROW>
-                                                                    </VALUES>
-                                                                </MODULO>
+                                                                        <NAME>Rating_Dynamiic</NAME>
+                                                                        <VALUES>
+                                                                            <ROW>
+                                                                                <Credit_Risk_Image>icon_gold_slash.png</Credit_Risk_Image>
+                                                                                <Credit_Risk_Description>Risco de Crédito Considerável</Credit_Risk_Description>
+                                                                                <Credit_Recommendation_Image>icon_gold_slash.png</Credit_Recommendation_Image>
+                                                                                <Credit_Recommendation_Description>Prudência</Credit_Recommendation_Description>
+                                                                                <Incidents_Image>icon_red_cross.png</Incidents_Image>
+                                                                                <Incidents_Description>1</Incidents_Description>
+                                                                                <Actual_Condition_Image>icon_verde_certo.png</Actual_Condition_Image>
+                                                                                <Actual_Condition_Description>Em actividade</Actual_Condition_Description>
+                                                                            </ROW>
+                                                                        </VALUES>
+                                                                    </MODULO>
 `, `<MODULO>
-                                                                    <NAME>Financial_Highlights</NAME>
-                                                                    <VALUES>
-                                                                        <ROW>
-                                                                            <IdLabel/>
-                                                                            <Current_Year_Values>2022</Current_Year_Values>
-                                                                            <Last_Year_Values>2021</Last_Year_Values>
-                                                                            <Last_Year_Values_1>2020</Last_Year_Values_1>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <IdLabel>Vendas Liquidas</IdLabel>
-                                                                            <Current_Year_Values>5892589.46</Current_Year_Values>
-                                                                            <Last_Year_Values>4469839.65</Last_Year_Values>
-                                                                            <Last_Year_Values_1>4740984.30</Last_Year_Values_1>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <IdLabel>Resultado Liquido</IdLabel>
-                                                                            <Current_Year_Values>112649.73</Current_Year_Values>
-                                                                            <Last_Year_Values>-219123.46</Last_Year_Values>
-                                                                            <Last_Year_Values_1>66204.15</Last_Year_Values_1>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <IdLabel>Capital Próprio</IdLabel>
-                                                                            <Current_Year_Values>1453321.23</Current_Year_Values>
-                                                                            <Last_Year_Values>1340671.50</Last_Year_Values>
-                                                                            <Last_Year_Values_1>1559794.96</Last_Year_Values_1>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <IdLabel>Inventários</IdLabel>
-                                                                            <Current_Year_Values>481351.59</Current_Year_Values>
-                                                                            <Last_Year_Values>371933.36</Last_Year_Values>
-                                                                            <Last_Year_Values_1>509060.70</Last_Year_Values_1>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <IdLabel>Passivo</IdLabel>
-                                                                            <Current_Year_Values>3527818.66</Current_Year_Values>
-                                                                            <Last_Year_Values>3306256.37</Last_Year_Values>
-                                                                            <Last_Year_Values_1>2721751.16</Last_Year_Values_1>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <IdLabel>Activo</IdLabel>
-                                                                            <Current_Year_Values>4981139.89</Current_Year_Values>
-                                                                            <Last_Year_Values>4646927.87</Last_Year_Values>
-                                                                            <Last_Year_Values_1>4281546.12</Last_Year_Values_1>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <IdLabel>EBITDA</IdLabel>
-                                                                            <Current_Year_Values>421396.33</Current_Year_Values>
-                                                                            <Last_Year_Values>90032.19</Last_Year_Values>
-                                                                            <Last_Year_Values_1>366433.23</Last_Year_Values_1>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <IdLabel>Empregados</IdLabel>
-                                                                            <Current_Year_Values>78</Current_Year_Values>
-                                                                            <Last_Year_Values>81</Last_Year_Values>
-                                                                            <Last_Year_Values_1>89</Last_Year_Values_1>
-                                                                        </ROW>
-                                                                    </VALUES>
-                                                                </MODULO>
+                                                                        <NAME>Financial_Highlights</NAME>
+                                                                        <VALUES>
+                                                                            <ROW>
+                                                                                <IdLabel/>
+                                                                                <Current_Year_Values>2022</Current_Year_Values>
+                                                                                <Last_Year_Values>2021</Last_Year_Values>
+                                                                                <Last_Year_Values_1>2020</Last_Year_Values_1>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <IdLabel>Vendas Liquidas</IdLabel>
+                                                                                <Current_Year_Values>5892589.46</Current_Year_Values>
+                                                                                <Last_Year_Values>4469839.65</Last_Year_Values>
+                                                                                <Last_Year_Values_1>4740984.30</Last_Year_Values_1>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <IdLabel>Resultado Liquido</IdLabel>
+                                                                                <Current_Year_Values>112649.73</Current_Year_Values>
+                                                                                <Last_Year_Values>-219123.46</Last_Year_Values>
+                                                                                <Last_Year_Values_1>66204.15</Last_Year_Values_1>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <IdLabel>Capital Próprio</IdLabel>
+                                                                                <Current_Year_Values>1453321.23</Current_Year_Values>
+                                                                                <Last_Year_Values>1340671.50</Last_Year_Values>
+                                                                                <Last_Year_Values_1>1559794.96</Last_Year_Values_1>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <IdLabel>Inventários</IdLabel>
+                                                                                <Current_Year_Values>481351.59</Current_Year_Values>
+                                                                                <Last_Year_Values>371933.36</Last_Year_Values>
+                                                                                <Last_Year_Values_1>509060.70</Last_Year_Values_1>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <IdLabel>Passivo</IdLabel>
+                                                                                <Current_Year_Values>3527818.66</Current_Year_Values>
+                                                                                <Last_Year_Values>3306256.37</Last_Year_Values>
+                                                                                <Last_Year_Values_1>2721751.16</Last_Year_Values_1>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <IdLabel>Activo</IdLabel>
+                                                                                <Current_Year_Values>4981139.89</Current_Year_Values>
+                                                                                <Last_Year_Values>4646927.87</Last_Year_Values>
+                                                                                <Last_Year_Values_1>4281546.12</Last_Year_Values_1>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <IdLabel>EBITDA</IdLabel>
+                                                                                <Current_Year_Values>421396.33</Current_Year_Values>
+                                                                                <Last_Year_Values>90032.19</Last_Year_Values>
+                                                                                <Last_Year_Values_1>366433.23</Last_Year_Values_1>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <IdLabel>Empregados</IdLabel>
+                                                                                <Current_Year_Values>78</Current_Year_Values>
+                                                                                <Last_Year_Values>81</Last_Year_Values>
+                                                                                <Last_Year_Values_1>89</Last_Year_Values_1>
+                                                                            </ROW>
+                                                                        </VALUES>
+                                                                    </MODULO>
 `, `<MODULO>
-                                                                    <NAME>Summary</NAME>
-                                                                    <VALUES>
-                                                                        <ROW>
-                                                                            <VAT_Number>502640421</VAT_Number>
-                                                                            <Legal_Form>Sociedade por Quotas de Responsabilidade Limitada</Legal_Form>
-                                                                            <Total>78</Total>
-                                                                            <Capital>500000</Capital>
-                                                                            <Constitution>19911016</Constitution>
-                                                                            <SituacaoAtual>Em actividade</SituacaoAtual>
-                                                                            <Last_Balance_Date>2022</Last_Balance_Date>
-                                                                            <Total_Sales>5892589.46</Total_Sales>
-                                                                            <Mother_Company/>
-                                                                            <Export>1</Export>
-                                                                            <Import>1</Import>
-                                                                        </ROW>
-                                                                    </VALUES>
-                                                                </MODULO>
+                                                                        <NAME>Summary</NAME>
+                                                                        <VALUES>
+                                                                            <ROW>
+                                                                                <VAT_Number>502640421</VAT_Number>
+                                                                                <Legal_Form>Sociedade por Quotas de Responsabilidade Limitada</Legal_Form>
+                                                                                <Total>78</Total>
+                                                                                <Capital>500000</Capital>
+                                                                                <Constitution>19911016</Constitution>
+                                                                                <SituacaoAtual>Em actividade</SituacaoAtual>
+                                                                                <Last_Balance_Date>2022</Last_Balance_Date>
+                                                                                <Total_Sales>5892589.46</Total_Sales>
+                                                                                <Mother_Company/>
+                                                                                <Export>1</Export>
+                                                                                <Import>1</Import>
+                                                                            </ROW>
+                                                                        </VALUES>
+                                                                    </MODULO>
 `, `<MODULO>
-                                                                    <NAME>Summary_Of_Claims</NAME>
-                                                                    <VALUES>
-                                                                        <ROW>
-                                                                            <ID>1</ID>
-                                                                            <Entity_1>1</Entity_1>
-                                                                            <Value_1>0</Value_1>
-                                                                            <Entity_2>2</Entity_2>
-                                                                            <Value_2>0</Value_2>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <ID>2</ID>
-                                                                            <Entity_1>3</Entity_1>
-                                                                            <Value_1>0</Value_1>
-                                                                            <Entity_2>4</Entity_2>
-                                                                            <Value_2>0</Value_2>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <ID>3</ID>
-                                                                            <Entity_1>5</Entity_1>
-                                                                            <Value_1>1</Value_1>
-                                                                            <Entity_2>6</Entity_2>
-                                                                            <Value_2>0</Value_2>
-                                                                        </ROW>
-                                                                    </VALUES>
-                                                                </MODULO>
+                                                                        <NAME>Summary_Of_Claims</NAME>
+                                                                        <VALUES>
+                                                                            <ROW>
+                                                                                <ID>1</ID>
+                                                                                <Entity_1>1</Entity_1>
+                                                                                <Value_1>0</Value_1>
+                                                                                <Entity_2>2</Entity_2>
+                                                                                <Value_2>0</Value_2>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <ID>2</ID>
+                                                                                <Entity_1>3</Entity_1>
+                                                                                <Value_1>0</Value_1>
+                                                                                <Entity_2>4</Entity_2>
+                                                                                <Value_2>0</Value_2>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <ID>3</ID>
+                                                                                <Entity_1>5</Entity_1>
+                                                                                <Value_1>1</Value_1>
+                                                                                <Entity_2>6</Entity_2>
+                                                                                <Value_2>0</Value_2>
+                                                                            </ROW>
+                                                                        </VALUES>
+                                                                    </MODULO>
 `, `<MODULO>
-                                                                    <NAME>Identification</NAME>
-                                                                    <VALUES>
-                                                                        <ROW>
-                                                                            <Name>MBA-MARKETING E BRINDES LDA</Name>
-                                                                            <Trust_Number>276182</Trust_Number>
-                                                                            <VAT_Number>502640421</VAT_Number>
-                                                                            <Address>Rua Vilar do Senhor, nº 493</Address>
-                                                                            <Postal_Code_Number>4455-213</Postal_Code_Number>
-                                                                            <Postal_Code>LAVRA</Postal_Code>
-                                                                            <Municipality>MATOSINHOS</Municipality>
-                                                                            <District>PORTO</District>
-                                                                            <Telephone1>229982500</Telephone1>
-                                                                            <Telephone2>214125678</Telephone2>
-                                                                            <Telephone3/>
-                                                                            <Fax1>229982539</Fax1>
-                                                                            <Fax2>214125650</Fax2>
-                                                                            <Fax3/>
-                                                                            <Cae1>46900-Comércio por grosso não especializado</Cae1>
-                                                                            <Cae2>73110-Agências de publicidade</Cae2>
-                                                                            <Cae3>47784-Comércio a retalho de outros produtos novos, em estabelecimentos especializados, n.e.</Cae3>
-                                                                            <Email>NUNO.BRANQUINHO@NOBRINDE.COM</Email>
-                                                                            <Website>www.nobrinde.com</Website>
-                                                                            <Country>PORTUGAL</Country>
-                                                                            <Denomination>Nobrinde</Denomination>
-                                                                        </ROW>
-                                                                    </VALUES>
-                                                                </MODULO>
+                                                                        <NAME>Identification</NAME>
+                                                                        <VALUES>
+                                                                            <ROW>
+                                                                                <Name>MBA-MARKETING E BRINDES LDA</Name>
+                                                                                <Trust_Number>276182</Trust_Number>
+                                                                                <VAT_Number>502640421</VAT_Number>
+                                                                                <Address>Rua Vilar do Senhor, nº 493</Address>
+                                                                                <Postal_Code_Number>4455-213</Postal_Code_Number>
+                                                                                <Postal_Code>LAVRA</Postal_Code>
+                                                                                <Municipality>MATOSINHOS</Municipality>
+                                                                                <District>PORTO</District>
+                                                                                <Telephone1>229982500</Telephone1>
+                                                                                <Telephone2>214125678</Telephone2>
+                                                                                <Telephone3/>
+                                                                                <Fax1>229982539</Fax1>
+                                                                                <Fax2>214125650</Fax2>
+                                                                                <Fax3/>
+                                                                                <Cae1>46900-Comércio por grosso não especializado</Cae1>
+                                                                                <Cae2>73110-Agências de publicidade</Cae2>
+                                                                                <Cae3>47784-Comércio a retalho de outros produtos novos, em estabelecimentos especializados, n.e.</Cae3>
+                                                                                <Email>NUNO.BRANQUINHO@NOBRINDE.COM</Email>
+                                                                                <Website>www.nobrinde.com</Website>
+                                                                                <Country>PORTUGAL</Country>
+                                                                                <Denomination>Nobrinde</Denomination>
+                                                                            </ROW>
+                                                                        </VALUES>
+                                                                    </MODULO>
 `, `<MODULO>
-                                                                    <NAME>Sector_Chart</NAME>
-                                                                    <VALUES>
-                                                                        <ROW>
-                                                                            <Total>58</Total>
-                                                                            <Rating>A</Rating>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <Total>53</Total>
-                                                                            <Rating>B</Rating>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <Total>210</Total>
-                                                                            <Rating>C</Rating>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <Total>259</Total>
-                                                                            <Rating>D</Rating>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <Total>4081</Total>
-                                                                            <Rating>E</Rating>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <Total>4691</Total>
-                                                                            <Rating>F</Rating>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <Total>5211</Total>
-                                                                            <Rating>G</Rating>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <Total>8075</Total>
-                                                                            <Rating>H</Rating>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <Total>11735</Total>
-                                                                            <Rating>I</Rating>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <Total>7635</Total>
-                                                                            <Rating>J</Rating>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <Total>7752</Total>
-                                                                            <Rating>L</Rating>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <Total>5681</Total>
-                                                                            <Rating>M</Rating>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <Total>21642</Total>
-                                                                            <Rating>P</Rating>
-                                                                        </ROW>
-                                                                    </VALUES>
-                                                                </MODULO>
+                                                                        <NAME>Sector_Chart</NAME>
+                                                                        <VALUES>
+                                                                            <ROW>
+                                                                                <Total>58</Total>
+                                                                                <Rating>A</Rating>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <Total>53</Total>
+                                                                                <Rating>B</Rating>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <Total>210</Total>
+                                                                                <Rating>C</Rating>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <Total>259</Total>
+                                                                                <Rating>D</Rating>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <Total>4081</Total>
+                                                                                <Rating>E</Rating>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <Total>4691</Total>
+                                                                                <Rating>F</Rating>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <Total>5211</Total>
+                                                                                <Rating>G</Rating>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <Total>8075</Total>
+                                                                                <Rating>H</Rating>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <Total>11735</Total>
+                                                                                <Rating>I</Rating>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <Total>7635</Total>
+                                                                                <Rating>J</Rating>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <Total>7752</Total>
+                                                                                <Rating>L</Rating>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <Total>5681</Total>
+                                                                                <Rating>M</Rating>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <Total>21642</Total>
+                                                                                <Rating>P</Rating>
+                                                                            </ROW>
+                                                                        </VALUES>
+                                                                    </MODULO>
 `, `<MODULO>
-                                                                    <NAME>Management_Bodies</NAME>
-                                                                    <VALUES>
-                                                                        <ROW>
-                                                                            <NAME>OLIVEIRA.,NUNO MIGUEL GONCALVES DE</NAME>
-                                                                            <THEFUNCTION>Sócio Gerente</THEFUNCTION>
-                                                                            <IdOrgaoSocial>0</IdOrgaoSocial>
-                                                                            <Designacao/>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <NAME>OLIVEIRA.,MARISA SABINO PINHO DA FONTE</NAME>
-                                                                            <THEFUNCTION>Sócio Gerente</THEFUNCTION>
-                                                                            <IdOrgaoSocial>0</IdOrgaoSocial>
-                                                                            <Designacao/>
-                                                                        </ROW>
-                                                                    </VALUES>
-                                                                </MODULO>
+                                                                        <NAME>Management_Bodies</NAME>
+                                                                        <VALUES>
+                                                                            <ROW>
+                                                                                <NAME>OLIVEIRA.,NUNO MIGUEL GONCALVES DE</NAME>
+                                                                                <THEFUNCTION>Sócio Gerente</THEFUNCTION>
+                                                                                <IdOrgaoSocial>0</IdOrgaoSocial>
+                                                                                <Designacao/>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <NAME>OLIVEIRA.,MARISA SABINO PINHO DA FONTE</NAME>
+                                                                                <THEFUNCTION>Sócio Gerente</THEFUNCTION>
+                                                                                <IdOrgaoSocial>0</IdOrgaoSocial>
+                                                                                <Designacao/>
+                                                                            </ROW>
+                                                                        </VALUES>
+                                                                    </MODULO>
 `, `<MODULO>
-                                                                    <NAME>ObtemCapitalSocial_P</NAME>
-                                                                    <VALUES>
-                                                                        <ROW>
-                                                                            <Capital>500000</Capital>
-                                                                            <Claim_Number>0</Claim_Number>
-                                                                            <Claim_Value/>
-                                                                            <TipoSociedade/>
-                                                                        </ROW>
-                                                                    </VALUES>
-                                                                </MODULO>
+                                                                        <NAME>ObtemCapitalSocial_P</NAME>
+                                                                        <VALUES>
+                                                                            <ROW>
+                                                                                <Capital>500000</Capital>
+                                                                                <Claim_Number>0</Claim_Number>
+                                                                                <Claim_Value/>
+                                                                                <TipoSociedade/>
+                                                                            </ROW>
+                                                                        </VALUES>
+                                                                    </MODULO>
 `, `<MODULO>
-                                                                    <NAME>Partners_Capital</NAME>
-                                                                    <VALUES>
-                                                                        <ROW>
-                                                                            <NAME>OLIVEIRA.,MARISA SABINO PINHO DA FONTE</NAME>
-                                                                            <Capital_Distribution>250000.00</Capital_Distribution>
-                                                                            <Capital_Percentage>50</Capital_Percentage>
-                                                                            <TipoSociedade/>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <NAME>OLIVEIRA.,NUNO MIGUEL GONCALVES DE</NAME>
-                                                                            <Capital_Distribution>250000.00</Capital_Distribution>
-                                                                            <Capital_Percentage>50</Capital_Percentage>
-                                                                            <TipoSociedade/>
-                                                                        </ROW>
-                                                                    </VALUES>
-                                                                </MODULO>
+                                                                        <NAME>Partners_Capital</NAME>
+                                                                        <VALUES>
+                                                                            <ROW>
+                                                                                <NAME>OLIVEIRA.,MARISA SABINO PINHO DA FONTE</NAME>
+                                                                                <Capital_Distribution>250000.00</Capital_Distribution>
+                                                                                <Capital_Percentage>50</Capital_Percentage>
+                                                                                <TipoSociedade/>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <NAME>OLIVEIRA.,NUNO MIGUEL GONCALVES DE</NAME>
+                                                                                <Capital_Distribution>250000.00</Capital_Distribution>
+                                                                                <Capital_Percentage>50</Capital_Percentage>
+                                                                                <TipoSociedade/>
+                                                                            </ROW>
+                                                                        </VALUES>
+                                                                    </MODULO>
 `, `<MODULO>
-                                                                    <NAME>Legal_Structure</NAME>
-                                                                    <VALUES>
-                                                                        <ROW>
-                                                                            <Trust_Number>276182</Trust_Number>
-                                                                            <Business_Registration_Number>49377</Business_Registration_Number>
-                                                                            <Conservatory_ID>36</Conservatory_ID>
-                                                                            <Business_Registration_Date>19911106</Business_Registration_Date>
-                                                                            <Conservatory_Designation>Matosinhos</Conservatory_Designation>
-                                                                            <Section_Designation>3ª. Secção</Section_Designation>
-                                                                            <Diario_Republica>90 </Diario_Republica>
-                                                                            <Diario_Republica_Date>19920416</Diario_Republica_Date>
-                                                                            <Constitution>19911016</Constitution>
-                                                                            <Subscription_Number>1   </Subscription_Number>
-                                                                            <Registration_Number>502640421</Registration_Number>
-                                                                            <Publication_Description>Diário da República</Publication_Description>
-                                                                        </ROW>
-                                                                    </VALUES>
-                                                                </MODULO>
+                                                                        <NAME>Legal_Structure</NAME>
+                                                                        <VALUES>
+                                                                            <ROW>
+                                                                                <Trust_Number>276182</Trust_Number>
+                                                                                <Business_Registration_Number>49377</Business_Registration_Number>
+                                                                                <Conservatory_ID>36</Conservatory_ID>
+                                                                                <Business_Registration_Date>19911106</Business_Registration_Date>
+                                                                                <Conservatory_Designation>Matosinhos</Conservatory_Designation>
+                                                                                <Section_Designation>3ª. Secção</Section_Designation>
+                                                                                <Diario_Republica>90 </Diario_Republica>
+                                                                                <Diario_Republica_Date>19920416</Diario_Republica_Date>
+                                                                                <Constitution>19911016</Constitution>
+                                                                                <Subscription_Number>1   </Subscription_Number>
+                                                                                <Registration_Number>502640421</Registration_Number>
+                                                                                <Publication_Description>Diário da República</Publication_Description>
+                                                                            </ROW>
+                                                                        </VALUES>
+                                                                    </MODULO>
 `, `<MODULO>
-                                                                    <NAME>Social_Pact</NAME>
-                                                                    <VALUES>
-                                                                        <ROW>
-                                                                            <Alteration_Date>20230623</Alteration_Date>
-                                                                            <Date>20230623</Date>
-                                                                            <Publication>Portal MJ</Publication>
-                                                                            <PactoSocial>43</PactoSocial>
-                                                                            <DescricaoPactoSocial>prestação de contas anuais</DescricaoPactoSocial>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <Alteration_Date>20220623</Alteration_Date>
-                                                                            <Date>20220623</Date>
-                                                                            <Publication>Portal MJ</Publication>
-                                                                            <PactoSocial>43</PactoSocial>
-                                                                            <DescricaoPactoSocial>prestação de contas anuais</DescricaoPactoSocial>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <Alteration_Date>20210730</Alteration_Date>
-                                                                            <Date>20210730</Date>
-                                                                            <Publication>Portal MJ</Publication>
-                                                                            <PactoSocial>43</PactoSocial>
-                                                                            <DescricaoPactoSocial>prestação de contas anuais</DescricaoPactoSocial>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <Alteration_Date>20200813</Alteration_Date>
-                                                                            <Date>20200813</Date>
-                                                                            <Publication>Portal MJ</Publication>
-                                                                            <PactoSocial>43</PactoSocial>
-                                                                            <DescricaoPactoSocial>prestação de contas anuais</DescricaoPactoSocial>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <Alteration_Date>20190708</Alteration_Date>
-                                                                            <Date>20190708</Date>
-                                                                            <Publication>Portal MJ</Publication>
-                                                                            <PactoSocial>43</PactoSocial>
-                                                                            <DescricaoPactoSocial>prestação de contas anuais</DescricaoPactoSocial>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <Alteration_Date>20180713</Alteration_Date>
-                                                                            <Date>20180713</Date>
-                                                                            <Publication>Portal MJ</Publication>
-                                                                            <PactoSocial>43</PactoSocial>
-                                                                            <DescricaoPactoSocial>prestação de contas anuais</DescricaoPactoSocial>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <Alteration_Date>20170729</Alteration_Date>
-                                                                            <Date>20170729</Date>
-                                                                            <Publication>Portal MJ</Publication>
-                                                                            <PactoSocial>43</PactoSocial>
-                                                                            <DescricaoPactoSocial>prestação de contas anuais</DescricaoPactoSocial>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <Alteration_Date>20160728</Alteration_Date>
-                                                                            <Date>20160728</Date>
-                                                                            <Publication>Portal MJ</Publication>
-                                                                            <PactoSocial>43</PactoSocial>
-                                                                            <DescricaoPactoSocial>prestação de contas anuais</DescricaoPactoSocial>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <Alteration_Date>20160628</Alteration_Date>
-                                                                            <Date>20160628</Date>
-                                                                            <Publication>Portal MJ</Publication>
-                                                                            <PactoSocial>3</PactoSocial>
-                                                                            <DescricaoPactoSocial>alteração ao pacto social</DescricaoPactoSocial>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <Alteration_Date>20160628</Alteration_Date>
-                                                                            <Date>20160628</Date>
-                                                                            <Publication>Portal MJ</Publication>
-                                                                            <PactoSocial>6</PactoSocial>
-                                                                            <DescricaoPactoSocial>aumento de capital social</DescricaoPactoSocial>
-                                                                        </ROW>
-                                                                    </VALUES>
-                                                                </MODULO>
+                                                                        <NAME>Social_Pact</NAME>
+                                                                        <VALUES>
+                                                                            <ROW>
+                                                                                <Alteration_Date>20230623</Alteration_Date>
+                                                                                <Date>20230623</Date>
+                                                                                <Publication>Portal MJ</Publication>
+                                                                                <PactoSocial>43</PactoSocial>
+                                                                                <DescricaoPactoSocial>prestação de contas anuais</DescricaoPactoSocial>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <Alteration_Date>20220623</Alteration_Date>
+                                                                                <Date>20220623</Date>
+                                                                                <Publication>Portal MJ</Publication>
+                                                                                <PactoSocial>43</PactoSocial>
+                                                                                <DescricaoPactoSocial>prestação de contas anuais</DescricaoPactoSocial>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <Alteration_Date>20210730</Alteration_Date>
+                                                                                <Date>20210730</Date>
+                                                                                <Publication>Portal MJ</Publication>
+                                                                                <PactoSocial>43</PactoSocial>
+                                                                                <DescricaoPactoSocial>prestação de contas anuais</DescricaoPactoSocial>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <Alteration_Date>20200813</Alteration_Date>
+                                                                                <Date>20200813</Date>
+                                                                                <Publication>Portal MJ</Publication>
+                                                                                <PactoSocial>43</PactoSocial>
+                                                                                <DescricaoPactoSocial>prestação de contas anuais</DescricaoPactoSocial>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <Alteration_Date>20190708</Alteration_Date>
+                                                                                <Date>20190708</Date>
+                                                                                <Publication>Portal MJ</Publication>
+                                                                                <PactoSocial>43</PactoSocial>
+                                                                                <DescricaoPactoSocial>prestação de contas anuais</DescricaoPactoSocial>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <Alteration_Date>20180713</Alteration_Date>
+                                                                                <Date>20180713</Date>
+                                                                                <Publication>Portal MJ</Publication>
+                                                                                <PactoSocial>43</PactoSocial>
+                                                                                <DescricaoPactoSocial>prestação de contas anuais</DescricaoPactoSocial>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <Alteration_Date>20170729</Alteration_Date>
+                                                                                <Date>20170729</Date>
+                                                                                <Publication>Portal MJ</Publication>
+                                                                                <PactoSocial>43</PactoSocial>
+                                                                                <DescricaoPactoSocial>prestação de contas anuais</DescricaoPactoSocial>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <Alteration_Date>20160728</Alteration_Date>
+                                                                                <Date>20160728</Date>
+                                                                                <Publication>Portal MJ</Publication>
+                                                                                <PactoSocial>43</PactoSocial>
+                                                                                <DescricaoPactoSocial>prestação de contas anuais</DescricaoPactoSocial>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <Alteration_Date>20160628</Alteration_Date>
+                                                                                <Date>20160628</Date>
+                                                                                <Publication>Portal MJ</Publication>
+                                                                                <PactoSocial>3</PactoSocial>
+                                                                                <DescricaoPactoSocial>alteração ao pacto social</DescricaoPactoSocial>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <Alteration_Date>20160628</Alteration_Date>
+                                                                                <Date>20160628</Date>
+                                                                                <Publication>Portal MJ</Publication>
+                                                                                <PactoSocial>6</PactoSocial>
+                                                                                <DescricaoPactoSocial>aumento de capital social</DescricaoPactoSocial>
+                                                                            </ROW>
+                                                                        </VALUES>
+                                                                    </MODULO>
 `, `<MODULO>
-                                                                    <NAME>Accountability</NAME>
-                                                                    <VALUES>
-                                                                        <ROW>
-                                                                            <Alteration_Date>20230623</Alteration_Date>
-                                                                            <Publication>Portal MJ</Publication>
-                                                                            <Id_Social_Pact>prestação de contas anuais</Id_Social_Pact>
-                                                                            <Description_Social_Pact>ANO: 2022</Description_Social_Pact>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <Alteration_Date>20220623</Alteration_Date>
-                                                                            <Publication>Portal MJ</Publication>
-                                                                            <Id_Social_Pact>prestação de contas anuais</Id_Social_Pact>
-                                                                            <Description_Social_Pact>ANO: 2021</Description_Social_Pact>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <Alteration_Date>20210730</Alteration_Date>
-                                                                            <Publication>Portal MJ</Publication>
-                                                                            <Id_Social_Pact>prestação de contas anuais</Id_Social_Pact>
-                                                                            <Description_Social_Pact>ANO: 2020</Description_Social_Pact>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <Alteration_Date>20200813</Alteration_Date>
-                                                                            <Publication>Portal MJ</Publication>
-                                                                            <Id_Social_Pact>prestação de contas anuais</Id_Social_Pact>
-                                                                            <Description_Social_Pact>ANO: 2019</Description_Social_Pact>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <Alteration_Date>20190708</Alteration_Date>
-                                                                            <Publication>Portal MJ</Publication>
-                                                                            <Id_Social_Pact>prestação de contas anuais</Id_Social_Pact>
-                                                                            <Description_Social_Pact>ANO: 2018</Description_Social_Pact>
-                                                                        </ROW>
-                                                                    </VALUES>
-                                                                </MODULO>
+                                                                        <NAME>Accountability</NAME>
+                                                                        <VALUES>
+                                                                            <ROW>
+                                                                                <Alteration_Date>20230623</Alteration_Date>
+                                                                                <Publication>Portal MJ</Publication>
+                                                                                <Id_Social_Pact>prestação de contas anuais</Id_Social_Pact>
+                                                                                <Description_Social_Pact>ANO: 2022</Description_Social_Pact>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <Alteration_Date>20220623</Alteration_Date>
+                                                                                <Publication>Portal MJ</Publication>
+                                                                                <Id_Social_Pact>prestação de contas anuais</Id_Social_Pact>
+                                                                                <Description_Social_Pact>ANO: 2021</Description_Social_Pact>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <Alteration_Date>20210730</Alteration_Date>
+                                                                                <Publication>Portal MJ</Publication>
+                                                                                <Id_Social_Pact>prestação de contas anuais</Id_Social_Pact>
+                                                                                <Description_Social_Pact>ANO: 2020</Description_Social_Pact>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <Alteration_Date>20200813</Alteration_Date>
+                                                                                <Publication>Portal MJ</Publication>
+                                                                                <Id_Social_Pact>prestação de contas anuais</Id_Social_Pact>
+                                                                                <Description_Social_Pact>ANO: 2019</Description_Social_Pact>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <Alteration_Date>20190708</Alteration_Date>
+                                                                                <Publication>Portal MJ</Publication>
+                                                                                <Id_Social_Pact>prestação de contas anuais</Id_Social_Pact>
+                                                                                <Description_Social_Pact>ANO: 2018</Description_Social_Pact>
+                                                                            </ROW>
+                                                                        </VALUES>
+                                                                    </MODULO>
 `, `<MODULO>
-                                                                    <NAME>Activity_Sector</NAME>
-                                                                    <VALUES>
-                                                                        <ROW>
-                                                                            <Cae1>Comércio por grosso não especializado</Cae1>
-                                                                            <Cae1_ID>46900</Cae1_ID>
-                                                                            <Cae2>Agências de publicidade</Cae2>
-                                                                            <Cae2_ID>73110</Cae2_ID>
-                                                                            <Cae3>Comércio a retalho de outros produtos novos, em estabelecimentos especializados, n.e.</Cae3>
-                                                                            <Cae3_ID>47784</Cae3_ID>
-                                                                        </ROW>
-                                                                    </VALUES>
-                                                                </MODULO>
+                                                                        <NAME>Activity_Sector</NAME>
+                                                                        <VALUES>
+                                                                            <ROW>
+                                                                                <Cae1>Comércio por grosso não especializado</Cae1>
+                                                                                <Cae1_ID>46900</Cae1_ID>
+                                                                                <Cae2>Agências de publicidade</Cae2>
+                                                                                <Cae2_ID>73110</Cae2_ID>
+                                                                                <Cae3>Comércio a retalho de outros produtos novos, em estabelecimentos especializados, n.e.</Cae3>
+                                                                                <Cae3_ID>47784</Cae3_ID>
+                                                                            </ROW>
+                                                                        </VALUES>
+                                                                    </MODULO>
 `, `<MODULO>
-                                                                    <NAME>Social_Object</NAME>
-                                                                    <VALUES>
-                                                                        <ROW>
-                                                                            <Description>Importação, exportação, distribuição e comércio por grosso e a retalho de brindes e artigos publicitários. Serviços de marketing, criação, design e artes gráficas. Serviços de impressão em estamparia, serigrafia, tampografia, digital e laser. Importação, exportação, distribuição e comércio por grosso e a retalho e serviços de aluguer de bicicletas, motociclos, triciclos e quadriciclos, motorizados ou não, e seus acessórios. Importação, exportação, distribuição e comércio por grosso e a retalho de cigarros eletrónicos e seus acessórios. Importação, exportação, distribuição e comércio por grosso e a retalho de máquinas de impressão digital, seus acessórios e consumíveis. Aluguer e gestão de escritórios e espaços comerciais</Description>
-                                                                        </ROW>
-                                                                    </VALUES>
-                                                                </MODULO>
+                                                                        <NAME>Social_Object</NAME>
+                                                                        <VALUES>
+                                                                            <ROW>
+                                                                                <Description>Importação, exportação, distribuição e comércio por grosso e a retalho de brindes e artigos publicitários. Serviços de marketing, criação, design e artes gráficas. Serviços de impressão em estamparia, serigrafia, tampografia, digital e laser. Importação, exportação, distribuição e comércio por grosso e a retalho e serviços de aluguer de bicicletas, motociclos, triciclos e quadriciclos, motorizados ou não, e seus acessórios. Importação, exportação, distribuição e comércio por grosso e a retalho de cigarros eletrónicos e seus acessórios. Importação, exportação, distribuição e comércio por grosso e a retalho de máquinas de impressão digital, seus acessórios e consumíveis. Aluguer e gestão de escritórios e espaços comerciais</Description>
+                                                                            </ROW>
+                                                                        </VALUES>
+                                                                    </MODULO>
 `, `<MODULO>
-                                                                    <NAME>Names</NAME>
-                                                                    <VALUES>
-                                                                        <ROW>
-                                                                            <Description>Nobrinde</Description>
-                                                                        </ROW>
-                                                                    </VALUES>
-                                                                </MODULO>
+                                                                        <NAME>Names</NAME>
+                                                                        <VALUES>
+                                                                            <ROW>
+                                                                                <Description>Nobrinde</Description>
+                                                                            </ROW>
+                                                                        </VALUES>
+                                                                    </MODULO>
 `, `<MODULO>
-                                                                    <NAME>Banks</NAME>
-                                                                    <VALUES>
-                                                                        <ROW>
-                                                                            <Designation>MILLENNIUM BCP</Designation>
-                                                                            <Desk>Matosinhos Negócios</Desk>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <Designation>BANCO SANTANDER TOTTA SA</Designation>
-                                                                            <Desk>Brito Capelo - Matosinhos</Desk>
-                                                                        </ROW>
-                                                                    </VALUES>
-                                                                </MODULO>
+                                                                        <NAME>Banks</NAME>
+                                                                        <VALUES>
+                                                                            <ROW>
+                                                                                <Designation>MILLENNIUM BCP</Designation>
+                                                                                <Desk>Matosinhos Negócios</Desk>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <Designation>BANCO SANTANDER TOTTA SA</Designation>
+                                                                                <Desk>Brito Capelo - Matosinhos</Desk>
+                                                                            </ROW>
+                                                                        </VALUES>
+                                                                    </MODULO>
 `, `<MODULO>
-                                                                    <NAME>Summary_Of_Claims5years</NAME>
-                                                                    <VALUES>
-                                                                        <ROW>
-                                                                            <Year>2023</Year>
-                                                                            <Number_of_Claims>1</Number_of_Claims>
-                                                                            <Claims_Value>10942.32</Claims_Value>
-                                                                        </ROW>
-                                                                    </VALUES>
-                                                                </MODULO>
+                                                                        <NAME>Summary_Of_Claims5years</NAME>
+                                                                        <VALUES>
+                                                                            <ROW>
+                                                                                <Year>2023</Year>
+                                                                                <Number_of_Claims>1</Number_of_Claims>
+                                                                                <Claims_Value>10942.32</Claims_Value>
+                                                                            </ROW>
+                                                                        </VALUES>
+                                                                    </MODULO>
 `, `<MODULO>
-                                                                    <NAME>Claims</NAME>
-                                                                    <VALUES>
-                                                                        <ROW>
-                                                                            <Claim_date>20230616</Claim_date>
-                                                                            <Amount>10942.32</Amount>
-                                                                            <Author>Gotas D'Aparência, Lda</Author >
-                                                                            <Claim_Type>Acção Esp.Cump.Obrig.DL269/98 (superior Alçada 1ªInstª)</Claim_Type>
-                                                                            <Judicial_District>Matosinhos - Trib. Jud. Com. do Porto</Judicial_District>
-                                                                            <Process>49887/23.6YIPRT</Process>
-                                                                            <Situation/>
-                                                                            <Juizo/>
-                                                                        </ROW >
-                                                                        <ROW>
-                                                                            <Claim_date>20180918</Claim_date>
-                                                                            <Amount>72553.67</Amount>
-                                                                            <Author>Liliane Cristina Rodrigues Dolores Figueiredo</Author>
-                                                                            <Claim_Type>Acção de Processo Comum</Claim_Type>
-                                                                            <Judicial_District>Portimão - Trib. Jud. Com. de Faro</Judicial_District>
-                                                                            <Process>2324/18.1T8PTM</Process>
-                                                                            <Situation />
-                                                                            <Juizo />
-                                                                        </ROW>
-                                                                    </VALUES >
-                                                                </MODULO >
+                                                                        <NAME>Claims</NAME>
+                                                                        <VALUES>
+                                                                            <ROW>
+                                                                                <Claim_date>20230616</Claim_date>
+                                                                                <Amount>10942.32</Amount>
+                                                                                <Author>Gotas D'Aparência, Lda</Author >
+                                                                                <Claim_Type>Acção Esp.Cump.Obrig.DL269/98 (superior Alçada 1ªInstª)</Claim_Type>
+                                                                                <Judicial_District>Matosinhos - Trib. Jud. Com. do Porto</Judicial_District>
+                                                                                <Process>49887/23.6YIPRT</Process>
+                                                                                <Situation/>
+                                                                                <Juizo/>
+                                                                            </ROW >
+                                                                            <ROW>
+                                                                                <Claim_date>20180918</Claim_date>
+                                                                                <Amount>72553.67</Amount>
+                                                                                <Author>Liliane Cristina Rodrigues Dolores Figueiredo</Author>
+                                                                                <Claim_Type>Acção de Processo Comum</Claim_Type>
+                                                                                <Judicial_District>Portimão - Trib. Jud. Com. de Faro</Judicial_District>
+                                                                                <Process>2324/18.1T8PTM</Process>
+                                                                                <Situation />
+                                                                                <Juizo />
+                                                                            </ROW>
+                                                                        </VALUES >
+                                                                    </MODULO >
 `, ` <MODULO >
-                                                                    <NAME>Employees</NAME>
-                                                                    <VALUES>
-                                                                        <ROW>
-                                                                            <Year>2022</Year>
-                                                                            <Number_of_Men>40</Number_of_Men>
-                                                                            <Percentage_of_Men>51</Percentage_of_Men>
-                                                                            <Number_of_Women>38</Number_of_Women>
-                                                                            <Percentage_of_Women>49</Percentage_of_Women>
-                                                                            <Number_of_People>78</Number_of_People>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <Year>2021</Year>
-                                                                            <Number_of_Men>45</Number_of_Men>
-                                                                            <Percentage_of_Men>56</Percentage_of_Men>
-                                                                            <Number_of_Women>36</Number_of_Women>
-                                                                            <Percentage_of_Women>44</Percentage_of_Women>
-                                                                            <Number_of_People>81</Number_of_People>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <Year>2020</Year>
-                                                                            <Number_of_Men>43</Number_of_Men>
-                                                                            <Percentage_of_Men>48</Percentage_of_Men>
-                                                                            <Number_of_Women>46</Number_of_Women>
-                                                                            <Percentage_of_Women>52</Percentage_of_Women>
-                                                                            <Number_of_People>89</Number_of_People>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <Year>2019</Year>
-                                                                            <Number_of_Men>51</Number_of_Men>
-                                                                            <Percentage_of_Men>55</Percentage_of_Men>
-                                                                            <Number_of_Women>42</Number_of_Women>
-                                                                            <Percentage_of_Women>45</Percentage_of_Women>
-                                                                            <Number_of_People>93</Number_of_People>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <Year>2018</Year>
-                                                                            <Number_of_Men>47</Number_of_Men>
-                                                                            <Percentage_of_Men>55</Percentage_of_Men>
-                                                                            <Number_of_Women>38</Number_of_Women>
-                                                                            <Percentage_of_Women>45</Percentage_of_Women>
-                                                                            <Number_of_People>85</Number_of_People>
-                                                                        </ROW>
-                                                                    </VALUES>
-                                                                </MODULO >
+                                                                        <NAME>Employees</NAME>
+                                                                        <VALUES>
+                                                                            <ROW>
+                                                                                <Year>2022</Year>
+                                                                                <Number_of_Men>40</Number_of_Men>
+                                                                                <Percentage_of_Men>51</Percentage_of_Men>
+                                                                                <Number_of_Women>38</Number_of_Women>
+                                                                                <Percentage_of_Women>49</Percentage_of_Women>
+                                                                                <Number_of_People>78</Number_of_People>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <Year>2021</Year>
+                                                                                <Number_of_Men>45</Number_of_Men>
+                                                                                <Percentage_of_Men>56</Percentage_of_Men>
+                                                                                <Number_of_Women>36</Number_of_Women>
+                                                                                <Percentage_of_Women>44</Percentage_of_Women>
+                                                                                <Number_of_People>81</Number_of_People>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <Year>2020</Year>
+                                                                                <Number_of_Men>43</Number_of_Men>
+                                                                                <Percentage_of_Men>48</Percentage_of_Men>
+                                                                                <Number_of_Women>46</Number_of_Women>
+                                                                                <Percentage_of_Women>52</Percentage_of_Women>
+                                                                                <Number_of_People>89</Number_of_People>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <Year>2019</Year>
+                                                                                <Number_of_Men>51</Number_of_Men>
+                                                                                <Percentage_of_Men>55</Percentage_of_Men>
+                                                                                <Number_of_Women>42</Number_of_Women>
+                                                                                <Percentage_of_Women>45</Percentage_of_Women>
+                                                                                <Number_of_People>93</Number_of_People>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <Year>2018</Year>
+                                                                                <Number_of_Men>47</Number_of_Men>
+                                                                                <Percentage_of_Men>55</Percentage_of_Men>
+                                                                                <Number_of_Women>38</Number_of_Women>
+                                                                                <Percentage_of_Women>45</Percentage_of_Women>
+                                                                                <Number_of_People>85</Number_of_People>
+                                                                            </ROW>
+                                                                        </VALUES>
+                                                                    </MODULO >
 `, ` <MODULO >
-                                                                    <NAME>Installations</NAME>
-                                                                    <VALUES>
-                                                                        <ROW>
-                                                                            <ID>79485</ID>
-                                                                            <Trust_Number>276182</Trust_Number>
-                                                                            <Building/>
-                                                                            <Area/>
-                                                                            <Rent/>
-                                                                            <Address>Rua Almeida Garrett, 7-B
+                                                                        <NAME>Installations</NAME>
+                                                                        <VALUES>
+                                                                            <ROW>
+                                                                                <ID>79485</ID>
+                                                                                <Trust_Number>276182</Trust_Number>
+                                                                                <Building/>
+                                                                                <Area/>
+                                                                                <Rent/>
+                                                                                <Address>Rua Almeida Garrett, 7-B
 Telf.: 265 231 146
 Fax: 265 528 048</Address>
-                                                                            <Number_Of_Installations>0</Number_Of_Installations>
-                                                                            <Description>Teve instalações</Description>
-                                                                            <Situation>-1</Situation>
-                                                                            <Locality/>
-                                                                            <Postal_Code_Number>2900</Postal_Code_Number>
-                                                                            <Postal_Code>SETUBAL</Postal_Code>
-                                                                            <Telephone/>
-                                                                            <Fax/>
-                                                                            <Observations/>
-                                                                            <TipoInstalacao>96</TipoInstalacao>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <ID>2743838</ID>
-                                                                            <Trust_Number>276182</Trust_Number>
-                                                                            <Building/>
-                                                                            <Area/>
-                                                                            <Rent/>
-                                                                            <Address>Rua Vilar do Senhor, nº 493</Address>
-                                                                            <Number_Of_Installations>0</Number_Of_Installations>
-                                                                            <Description>Tem sede</Description>
-                                                                            <Situation/>
-                                                                            <Locality/>
-                                                                            <Postal_Code_Number>4455-213</Postal_Code_Number>
-                                                                            <Postal_Code>LAVRA</Postal_Code>
-                                                                            <Telephone/>
-                                                                            <Fax/>
-                                                                            <Observations/>
-                                                                            <TipoInstalacao>97</TipoInstalacao>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <ID>79482</ID>
-                                                                            <Trust_Number>276182</Trust_Number>
-                                                                            <Building/>
-                                                                            <Area/>
-                                                                            <Rent/>
-                                                                            <Address>Avenida da República, 181, R/C-Loja 112 e 116 </Address>
-                                                                            <Number_Of_Installations>0</Number_Of_Installations>
-                                                                            <Description>Teve sede</Description>
-                                                                            <Situation>-1</Situation>
-                                                                            <Locality/>
-                                                                            <Postal_Code_Number>4450</Postal_Code_Number>
-                                                                            <Postal_Code>MATOSINHOS</Postal_Code>
-                                                                            <Telephone/>
-                                                                            <Fax/>
-                                                                            <Observations/>
-                                                                            <TipoInstalacao>98</TipoInstalacao>
-                                                                        </ROW>
-                                                                    </VALUES>
-                                                                </MODULO >
+                                                                                <Number_Of_Installations>0</Number_Of_Installations>
+                                                                                <Description>Teve instalações</Description>
+                                                                                <Situation>-1</Situation>
+                                                                                <Locality/>
+                                                                                <Postal_Code_Number>2900</Postal_Code_Number>
+                                                                                <Postal_Code>SETUBAL</Postal_Code>
+                                                                                <Telephone/>
+                                                                                <Fax/>
+                                                                                <Observations/>
+                                                                                <TipoInstalacao>96</TipoInstalacao>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <ID>2743838</ID>
+                                                                                <Trust_Number>276182</Trust_Number>
+                                                                                <Building/>
+                                                                                <Area/>
+                                                                                <Rent/>
+                                                                                <Address>Rua Vilar do Senhor, nº 493</Address>
+                                                                                <Number_Of_Installations>0</Number_Of_Installations>
+                                                                                <Description>Tem sede</Description>
+                                                                                <Situation/>
+                                                                                <Locality/>
+                                                                                <Postal_Code_Number>4455-213</Postal_Code_Number>
+                                                                                <Postal_Code>LAVRA</Postal_Code>
+                                                                                <Telephone/>
+                                                                                <Fax/>
+                                                                                <Observations/>
+                                                                                <TipoInstalacao>97</TipoInstalacao>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <ID>79482</ID>
+                                                                                <Trust_Number>276182</Trust_Number>
+                                                                                <Building/>
+                                                                                <Area/>
+                                                                                <Rent/>
+                                                                                <Address>Avenida da República, 181, R/C-Loja 112 e 116 </Address>
+                                                                                <Number_Of_Installations>0</Number_Of_Installations>
+                                                                                <Description>Teve sede</Description>
+                                                                                <Situation>-1</Situation>
+                                                                                <Locality/>
+                                                                                <Postal_Code_Number>4450</Postal_Code_Number>
+                                                                                <Postal_Code>MATOSINHOS</Postal_Code>
+                                                                                <Telephone/>
+                                                                                <Fax/>
+                                                                                <Observations/>
+                                                                                <TipoInstalacao>98</TipoInstalacao>
+                                                                            </ROW>
+                                                                        </VALUES>
+                                                                    </MODULO >
 `, ` <MODULO >
-                                                                    <NAME>Footer</NAME>
-                                                                    <VALUES>
-                                                                        <ROW>
-                                                                            <Description>O Rating DynamIIC analisa os seguintes critérios: antiguidade, incidentes comerciais (acções judiciais, insolvências, processos especiais de revitalização, protestos de letras), experiências de pagamentos, situação actual, informação financeira, dimensão e sector de actividade.</Description>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <Description>O Rating DynamIIC tem por base a análise de um conjunto de informação disponível na base de dados da INFOTRUST e no relacionamento de um conjunto de factores que são determinantes na avaliação do comportamento em termos de risco de crédito e da probabilidade de incumprimento de uma entidade empresarial no curto prazo. O sistema de avaliação de risco da INFOTRUST não representa em caso algum a opinião da INFOTRUST, expressando única e exclusivamente uma indicação sobre a possibilidade de uma entidade empresarial entrar em incumprimento.</Description>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <Description>Por se tratar de um indicador que tem por base uma análise estatística e previsional, não reflecte necessariamente a situação real de uma empresa e, como tal, não dispensa a consulta de outras fontes por parte do cliente.</Description>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <Description>Este Relatório/Módulo foi elaborado com base na informação disponível na base de dados INFOTRUST. As informações ou dados fornecidos pelo INFOTRUST que constam em qualquer dos seus produtos e serviços, não podem em caso algum ter o carácter de uma garantia. São simples indicações, que estão de acordo com os elementos que o INFOTRUST tenha conseguido obter. Por serem recolhidas de várias fontes não controladas pela INFOTRUST, esta não pode garantir que os dados apresentados sejam absolutamente correctos, apesar do máximo cuidado posto na sua recolha. Como tal, a INFOTRUST não poderá ser responsabilizado por quaisquer erros, omissões e eventuais incoerências.</Description>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <Description>O Cliente não utilizará estas informações senão para finalidades do seu negócio e para uso exclusivamente interno. As informações fornecidas são de carácter absolutamente confidencial, sendo aquele que as divulgar ou que divulgue a fonte que as forneceu, a terceiras pessoas ou entidades, o único responsável perante a Lei pelos prejuízos e consequências da divulgação.</Description>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <Description>Para qualquer assunto contacte, por favor, o nosso Serviço de Apoio a Clientes:</Description>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <Description>Telf: +351 214 249 000 </Description>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <Description>Fax:  +351 214 249 001/3</Description>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <Description>e.mail: geral@infotrust.pt</Description>
-                                                                        </ROW>
-                                                                        <ROW>
-                                                                            <Description>https://infotrust.pt/</Description>
-                                                                        </ROW>
-                                                                    </VALUES>
-                                                                </MODULO >
+                                                                        <NAME>Footer</NAME>
+                                                                        <VALUES>
+                                                                            <ROW>
+                                                                                <Description>O Rating DynamIIC analisa os seguintes critérios: antiguidade, incidentes comerciais (acções judiciais, insolvências, processos especiais de revitalização, protestos de letras), experiências de pagamentos, situação actual, informação financeira, dimensão e sector de actividade.</Description>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <Description>O Rating DynamIIC tem por base a análise de um conjunto de informação disponível na base de dados da INFOTRUST e no relacionamento de um conjunto de factores que são determinantes na avaliação do comportamento em termos de risco de crédito e da probabilidade de incumprimento de uma entidade empresarial no curto prazo. O sistema de avaliação de risco da INFOTRUST não representa em caso algum a opinião da INFOTRUST, expressando única e exclusivamente uma indicação sobre a possibilidade de uma entidade empresarial entrar em incumprimento.</Description>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <Description>Por se tratar de um indicador que tem por base uma análise estatística e previsional, não reflecte necessariamente a situação real de uma empresa e, como tal, não dispensa a consulta de outras fontes por parte do cliente.</Description>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <Description>Este Relatório/Módulo foi elaborado com base na informação disponível na base de dados INFOTRUST. As informações ou dados fornecidos pelo INFOTRUST que constam em qualquer dos seus produtos e serviços, não podem em caso algum ter o carácter de uma garantia. São simples indicações, que estão de acordo com os elementos que o INFOTRUST tenha conseguido obter. Por serem recolhidas de várias fontes não controladas pela INFOTRUST, esta não pode garantir que os dados apresentados sejam absolutamente correctos, apesar do máximo cuidado posto na sua recolha. Como tal, a INFOTRUST não poderá ser responsabilizado por quaisquer erros, omissões e eventuais incoerências.</Description>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <Description>O Cliente não utilizará estas informações senão para finalidades do seu negócio e para uso exclusivamente interno. As informações fornecidas são de carácter absolutamente confidencial, sendo aquele que as divulgar ou que divulgue a fonte que as forneceu, a terceiras pessoas ou entidades, o único responsável perante a Lei pelos prejuízos e consequências da divulgação.</Description>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <Description>Para qualquer assunto contacte, por favor, o nosso Serviço de Apoio a Clientes:</Description>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <Description>Telf: +351 214 249 000 </Description>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <Description>Fax:  +351 214 249 001/3</Description>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <Description>e.mail: geral@infotrust.pt</Description>
+                                                                            </ROW>
+                                                                            <ROW>
+                                                                                <Description>https://infotrust.pt/</Description>
+                                                                            </ROW>
+                                                                        </VALUES>
+                                                                    </MODULO >
 `]
 
         // Function to format XML with indentation and color-coding
